@@ -1,5 +1,5 @@
 # SpawnDev.BlazorJS.THREE
-Use the Three.js 3D library in Blazor WebAssembly.
+Use the [Three.js](https://threejs.org/) 3D library in Blazor WebAssembly.
 
 This project was largely auto-generated using Three.js TypeScript Declarations GitHub repo: [three-types/three-ts-types](https://github.com/three-types/three-ts-types), 
 and then filled in enough to get the current demos running.
