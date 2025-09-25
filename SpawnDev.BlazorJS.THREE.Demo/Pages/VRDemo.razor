@@ -1,0 +1,9 @@
+﻿@page "/ARCubeDemo"
+
+<PageTitle>SpawnDev.BlazorJS.THREE</PageTitle>
+
+<div>
+    <button class="btn btn-primary" @onclick="ToggleAR">Toggle AR</button>
+    <button class="btn btn-primary" @onclick="SendToHeadset">Send to Headset</button>
+    <canvas @ref=canvasRef width="600" height="600"></canvas>
+</div>

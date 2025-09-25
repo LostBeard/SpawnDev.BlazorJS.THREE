@@ -1,0 +1,9 @@
+﻿@page "/VRDemo2"
+
+<PageTitle>SpawnDev.BlazorJS.THREE</PageTitle>
+
+<div>
+    <button class="btn btn-primary" @onclick="ActivateXR">Start</button>
+    <button class="btn btn-primary" @onclick="SendToHeadset">Send to Headset</button>
+    <canvas @ref=canvasRef width="600" height="600"></canvas>
+</div>
