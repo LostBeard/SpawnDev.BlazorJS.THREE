@@ -1,25 +1,13 @@
-﻿using SpawnDev.BlazorJS;
-
-namespace SpawnDev.BlazorJS.THREE
+﻿namespace SpawnDev.BlazorJS.THREE
 {
-    public class THREEService : IAsyncBackgroundService
+    /// <summary>
+    /// Loads the THREE js library at app startup so it is ready for use for all components immediately
+    /// </summary>
+    /// <param name="JS"></param>
+    public class THREEService(BlazorJSRuntime JS) : IAsyncBackgroundService
     {
-        static string Namespace => typeof(THREEService).Namespace!;
-        public static string LatestBundledVersionSrc { get; } = $"./_content/{Namespace}/three.module.js";
-        public Task Ready => _Ready ??= InitAsync();
+        /// <inheritdoc/>
+        public Task Ready => _Ready ??= JS.Import("THREE", $"./_content/{typeof(THREEService).Namespace!}/three.module.js");
         Task? _Ready;
-        BlazorJSRuntime JS;
-        public THREEService(BlazorJSRuntime js)
-        {
-            JS = js;
-        }
-        async Task InitAsync()
-        {
-            if  (JS.IsUndefined("THREE"))
-            {
-                using var three = await JS.Import(LatestBundledVersionSrc);
-                JS.Set("THREE", three);
-            }
-        }
     }
 }
