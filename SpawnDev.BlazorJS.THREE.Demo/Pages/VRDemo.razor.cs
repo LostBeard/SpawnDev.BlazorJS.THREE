@@ -135,7 +135,7 @@ namespace SpawnDev.BlazorJS.THREE.Demo.Pages
                     if (hitTestSource == null)
                     {
                         // Request hit test source once
-                        hitTestSource = await session.RequestHitTestSource(new { Space = referenceSpace });
+                        hitTestSource = await session.RequestHitTestSource(new XRHitTestOptionsInit{ Space = referenceSpace });
                     }
 
                     if (hitTestSource != null)

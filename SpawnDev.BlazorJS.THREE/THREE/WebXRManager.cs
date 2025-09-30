@@ -164,7 +164,7 @@ namespace SpawnDev.BlazorJS.THREE
         /// <summary>
         /// (xrCamera: WebXRCamera) => ExternalTexture | undefined
         /// </summary>
-        public ExternalTexture GetCameraTexture(WebXRCamera xrCamera)
+        public ExternalTexture GetCameraTexture(XRCamera xrCamera)
         {
             return JSRef!.Call<ExternalTexture>("getCameraTexture", xrCamera);
         }
