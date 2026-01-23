@@ -10,6 +10,11 @@ namespace SpawnDev.BlazorJS.THREE
         public Color(IJSInProcessObjectReference _ref) : base(_ref) { }
 
         /// <summary>
+        /// constructor();
+        /// </summary>
+        public Color() : base(JS.New("THREE.Color")) { }
+
+        /// <summary>
         /// constructor(color?: ColorRepresentation);
         /// </summary>
         public Color(ColorRepresentation color) : base(JS.New("THREE.Color", color)) { }
@@ -98,7 +103,7 @@ namespace SpawnDev.BlazorJS.THREE
         /// <summary>
         /// setHSL(h: number, s: number, l: number, colorSpace?: string): Color;
         /// </summary>
-        public Color SetHSL(float h, float s, float l, string colorSpace)
+        public Color SetHSL(float h, float s, float l, string? colorSpace = null)
         {
             return JSRef!.Call<Color>("setHSL", h, s, l, colorSpace);
         }

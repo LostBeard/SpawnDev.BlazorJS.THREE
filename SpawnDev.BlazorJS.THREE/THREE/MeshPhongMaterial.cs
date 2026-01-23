@@ -17,6 +17,10 @@ namespace SpawnDev.BlazorJS.THREE
 
         #region Properties
         /// <summary>
+        /// color: Color;
+        /// </summary>
+        public Color Color { get => JSRef!.Get<Color>("color"); set => JSRef!.Set("color", value); }
+        /// <summary>
         /// readonly isMeshPhongMaterial: boolean;
         /// </summary>
         public bool IsMeshPhongMaterial { get => JSRef!.Get<bool>("isMeshPhongMaterial"); }

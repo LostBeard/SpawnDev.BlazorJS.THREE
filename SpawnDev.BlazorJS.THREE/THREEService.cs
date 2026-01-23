@@ -7,7 +7,13 @@
     public class THREEService(BlazorJSRuntime JS) : IAsyncBackgroundService
     {
         /// <inheritdoc/>
-        public Task Ready => _Ready ??= JS.Import("THREE", $"./_content/{typeof(THREEService).Namespace!}/three.module.js");
+        public Task Ready => _Ready ??= LoadReady();
         Task? _Ready;
+        async Task LoadReady()
+        {
+            await JS.Import("THREE", $"three");
+            using var orbitControlsModule = await JS.Import("OrbitControls");
+            JS.Set("OrbitControls", orbitControlsModule!.GetExportClass("OrbitControls"));
+        }
     }
 }
