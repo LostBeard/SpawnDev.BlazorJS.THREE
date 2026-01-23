@@ -3,7 +3,34 @@ using SpawnDev.BlazorJS.JSObjects;
 
 namespace SpawnDev.BlazorJS.THREE
 {
-    public class Points<TGeometry, TMaterial> : Object3D
+    /// <summary>
+    /// Non-generic Points class for simpler usage
+    /// </summary>
+    public class Points : Object3D
+    {
+        /// <inheritdoc/>
+        public Points(IJSInProcessObjectReference _ref) : base(_ref) { }
+
+        /// <summary>
+        /// Creates a Points object with the given geometry and material
+        /// </summary>
+        public Points(BufferGeometry geometry, PointsMaterial material) : base(JS.New("THREE.Points", geometry, material)) { }
+
+        /// <summary>
+        /// geometry: BufferGeometry;
+        /// </summary>
+        public BufferGeometry Geometry { get => JSRef!.Get<BufferGeometry>("geometry"); set => JSRef!.Set("geometry", value); }
+        /// <summary>
+        /// material: PointsMaterial;
+        /// </summary>
+        public PointsMaterial Material { get => JSRef!.Get<PointsMaterial>("material"); set => JSRef!.Set("material", value); }
+        /// <summary>
+        /// readonly isPoints: true;
+        /// </summary>
+        public bool IsPoints { get => JSRef!.Get<bool>("isPoints"); }
+    }
+
+    public class Points<TGeometry, TMaterial> : Points
     {
         #region Constructors
         /// <inheritdoc/>
@@ -20,15 +47,11 @@ namespace SpawnDev.BlazorJS.THREE
         /// <summary>
         /// geometry: TGeometry;
         /// </summary>
-        public TGeometry Geometry { get => JSRef!.Get<TGeometry>("geometry"); set => JSRef!.Set("geometry", value); }
-        /// <summary>
-        /// readonly isPoints: true;
-        /// </summary>
-        public bool IsPoints { get => JSRef!.Get<bool>("isPoints"); }
+        public new TGeometry Geometry { get => JSRef!.Get<TGeometry>("geometry"); set => JSRef!.Set("geometry", value); }
         /// <summary>
         /// material: TMaterial;
         /// </summary>
-        public TMaterial Material { get => JSRef!.Get<TMaterial>("material"); set => JSRef!.Set("material", value); }
+        public new TMaterial Material { get => JSRef!.Get<TMaterial>("material"); set => JSRef!.Set("material", value); }
         /// <summary>
         /// morphTargetDictionary?: { [key: string]: number } | undefined;
         /// </summary>

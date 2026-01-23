@@ -1,0 +1,16 @@
+@page "/LightingDemo"
+@using SpawnDev.BlazorJS.THREE
+
+<h3>Lighting Demo</h3>
+<p>Showcasing different Three.js light types with visual helpers.</p>
+
+<div style="margin-bottom: 10px;">
+    <label style="margin-right: 15px;"><input type="checkbox" checked="@directionalEnabled" @onchange="ToggleDirectional" /> Directional Light</label>
+    <label style="margin-right: 15px;"><input type="checkbox" checked="@pointEnabled" @onchange="TogglePoint" /> Point Light</label>
+    <label style="margin-right: 15px;"><input type="checkbox" checked="@spotEnabled" @onchange="ToggleSpot" /> Spot Light</label>
+    <label style="margin-right: 15px;"><input type="checkbox" checked="@hemisphereEnabled" @onchange="ToggleHemisphere" /> Hemisphere Light</label>
+</div>
+
+<div style="width: 100%; height: 600px; position: relative;">
+    <canvas @ref="canvasRef" tabindex="0" style="width: 100%; height: 100%; display: block; outline: none;"></canvas>
+</div>

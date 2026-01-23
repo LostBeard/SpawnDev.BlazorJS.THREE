@@ -10,6 +10,11 @@ namespace SpawnDev.BlazorJS.THREE
         public Vector2(IJSInProcessObjectReference _ref) : base(_ref) { }
 
         /// <summary>
+        /// Creates a new Vector2 with default values (0, 0)
+        /// </summary>
+        public Vector2() : base(JS.New("THREE.Vector2")) { }
+
+        /// <summary>
         /// constructor(x?: number, y?: number);
         /// </summary>
         public Vector2(float x, float y) : base(JS.New("THREE.Vector2", x, y)) { }

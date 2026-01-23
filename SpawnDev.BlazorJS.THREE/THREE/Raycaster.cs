@@ -10,6 +10,11 @@ namespace SpawnDev.BlazorJS.THREE
         public Raycaster(IJSInProcessObjectReference _ref) : base(_ref) { }
 
         /// <summary>
+        /// Creates a new Raycaster with default values
+        /// </summary>
+        public Raycaster() : base(JS.New("THREE.Raycaster")) { }
+
+        /// <summary>
         /// constructor(origin?: Vector3, direction?: Vector3, near?: number, far?: number);
         /// </summary>
         public Raycaster(Vector3 origin, Vector3 direction, float near, float far) : base(JS.New("THREE.Raycaster", origin, direction, near, far)) { }
@@ -66,26 +71,40 @@ namespace SpawnDev.BlazorJS.THREE
             JSRef!.CallVoid("set", origin, direction);
         }
         /// <summary>
-        /// intersectObjects<TIntersected extends Object3D>(
+        /// intersectObjects&lt;TIntersected extends Object3D&gt;(
         ///         objects: Object3D[],
         ///         recursive?: boolean,
-        ///         optionalTarget?: Array<Intersection<TIntersected>>,
-        ///     ): Array<Intersection<TIntersected>>;
+        ///         optionalTarget?: Array&lt;Intersection&lt;TIntersected&gt;&gt;,
+        ///     ): Array&lt;Intersection&lt;TIntersected&gt;&gt;;
         /// </summary>
         public Array<Intersection<TIntersected>> IntersectObjects<TIntersected>(Array<Object3D> objects, bool recursive, Array<Intersection<TIntersected>> optionalTarget)
         {
             return JSRef!.Call<Array<Intersection<TIntersected>>>("intersectObjects", objects, recursive, optionalTarget);
         }
         /// <summary>
-        /// intersectObject<TIntersected extends Object3D>(
+        /// Simplified IntersectObjects without optionalTarget
+        /// </summary>
+        public Intersection[] IntersectObjects(Object3D[] objects, bool recursive = false)
+        {
+            return JSRef!.Call<Intersection[]>("intersectObjects", objects, recursive);
+        }
+        /// <summary>
+        /// intersectObject&lt;TIntersected extends Object3D&gt;(
         ///         object: Object3D,
         ///         recursive?: boolean,
-        ///         optionalTarget?: Array<Intersection<TIntersected>>,
-        ///     ): Array<Intersection<TIntersected>>;
+        ///         optionalTarget?: Array&lt;Intersection&lt;TIntersected&gt;&gt;,
+        ///     ): Array&lt;Intersection&lt;TIntersected&gt;&gt;;
         /// </summary>
         public Array<Intersection<TIntersected>> IntersectObject<TIntersected>(Object3D obj, bool recursive, Array<Intersection<TIntersected>> optionalTarget)
         {
             return JSRef!.Call<Array<Intersection<TIntersected>>>("intersectObject", obj, recursive, optionalTarget);
+        }
+        /// <summary>
+        /// Simplified IntersectObject without optionalTarget
+        /// </summary>
+        public Intersection[] IntersectObject(Object3D obj, bool recursive = false)
+        {
+            return JSRef!.Call<Intersection[]>("intersectObject", obj, recursive);
         }
         #endregion
     }

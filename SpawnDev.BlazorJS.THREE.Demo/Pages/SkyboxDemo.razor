@@ -1,0 +1,12 @@
+@page "/SkyboxDemo"
+@using SpawnDev.BlazorJS.THREE
+
+<h3>Skybox / Environment Demo</h3>
+<p>Demonstrating environment maps and reflective materials. Use WASD to move, mouse to look around.</p>
+
+<div style="width: 100%; height: 600px; position: relative;">
+    <canvas @ref="canvasRef" tabindex="0" style="width: 100%; height: 100%; display: block; outline: none;"></canvas>
+    <div style="position: absolute; bottom: 10px; left: 10px; color: white; background: rgba(0,0,0,0.7); padding: 10px; border-radius: 5px; font-size: 12px;">
+        <strong>Controls:</strong> WASD to move, Q/E to roll, Mouse to look (click to enable)
+    </div>
+</div>

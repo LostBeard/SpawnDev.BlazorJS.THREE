@@ -13,6 +13,11 @@ namespace SpawnDev.BlazorJS.THREE
         /// </summary>
         public HemisphereLightHelper(HemisphereLight light, float size, ColorRepresentation color) : base(JS.New("THREE.HemisphereLightHelper", light, size, color)) { }
 
+        /// <summary>
+        /// Creates a HemisphereLightHelper with automatic color
+        /// </summary>
+        public HemisphereLightHelper(HemisphereLight light, float size = 1f) : base(JS.New("THREE.HemisphereLightHelper", light, size)) { }
+
         #endregion
 
         #region Properties

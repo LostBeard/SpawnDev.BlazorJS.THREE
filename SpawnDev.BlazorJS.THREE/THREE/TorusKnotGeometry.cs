@@ -20,6 +20,12 @@ namespace SpawnDev.BlazorJS.THREE
         /// </summary>
         public TorusKnotGeometry(float radius, float tube, float tubularSegments, float radialSegments, float p, float q) : base(JS.New("THREE.TorusKnotGeometry", radius, tube, tubularSegments, radialSegments, p, q)) { }
 
+        /// <summary>
+        /// Creates a torus knot geometry with default p=2 and q=3 values
+        /// </summary>
+        public TorusKnotGeometry(float radius = 1f, float tube = 0.4f, int tubularSegments = 64, int radialSegments = 8) 
+            : base(JS.New("THREE.TorusKnotGeometry", radius, tube, tubularSegments, radialSegments)) { }
+
         #endregion
 
         #region Properties

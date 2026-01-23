@@ -1,0 +1,15 @@
+@page "/GLTFModelDemo"
+@using SpawnDev.BlazorJS.THREE
+
+<h3>GLTF Model Demo</h3>
+<p>Loading and displaying animated 3D GLTF models with OrbitControls.</p>
+
+<div style="width: 100%; height: 600px; position: relative;">
+    <canvas @ref="canvasRef" tabindex="0" style="width: 100%; height: 100%; display: block; outline: none;"></canvas>
+    @if (isLoading)
+    {
+        <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: white; background: rgba(0,0,0,0.7); padding: 20px; border-radius: 10px;">
+            Loading model...
+        </div>
+    }
+</div>

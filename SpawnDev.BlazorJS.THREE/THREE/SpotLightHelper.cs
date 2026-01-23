@@ -13,6 +13,11 @@ namespace SpawnDev.BlazorJS.THREE
         /// </summary>
         public SpotLightHelper(Light light, ColorRepresentation color) : base(JS.New("THREE.SpotLightHelper", light, color)) { }
 
+        /// <summary>
+        /// Creates a SpotLightHelper with automatic color
+        /// </summary>
+        public SpotLightHelper(SpotLight light) : base(JS.New("THREE.SpotLightHelper", light)) { }
+
         #endregion
 
         #region Properties

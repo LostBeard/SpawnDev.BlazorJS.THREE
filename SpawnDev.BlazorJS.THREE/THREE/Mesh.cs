@@ -7,11 +7,21 @@ namespace SpawnDev.BlazorJS.THREE
     {
         /// <inheritdoc/>
         public Mesh(IJSInProcessObjectReference _ref) : base(_ref) { }
+        
+        /// <summary>
+        /// Creates a new Mesh with geometry and material
+        /// </summary>
+        public Mesh(BufferGeometry geometry, Material material) : base(JS.New("THREE.Mesh", geometry, material)) { }
+
         #region Properties
         /// <summary>
         /// count: number;
         /// </summary>
         public float Count { get => JSRef!.Get<float>("count"); set => JSRef!.Set("count", value); }
+        /// <summary>
+        /// geometry: BufferGeometry;
+        /// </summary>
+        public BufferGeometry Geometry { get => JSRef!.Get<BufferGeometry>("geometry"); set => JSRef!.Set("geometry", value); }
         /// <summary>
         /// geometry: TGeometry;
         /// </summary>
@@ -23,6 +33,10 @@ namespace SpawnDev.BlazorJS.THREE
         /// readonly isMesh: true;
         /// </summary>
         public bool IsMesh { get => JSRef!.Get<bool>("isMesh"); }
+        /// <summary>
+        /// material: Material;
+        /// </summary>
+        public Material Material { get => JSRef!.Get<Material>("material"); set => JSRef!.Set("material", value); }
         /// <summary>
         /// material: TMaterial;
         /// </summary>

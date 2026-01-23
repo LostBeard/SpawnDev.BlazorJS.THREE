@@ -13,6 +13,11 @@ namespace SpawnDev.BlazorJS.THREE
         /// </summary>
         public PointLightHelper(PointLight light, float sphereSize, ColorRepresentation color) : base(JS.New("THREE.PointLightHelper", light, sphereSize, color)) { }
 
+        /// <summary>
+        /// Creates a PointLightHelper with automatic color
+        /// </summary>
+        public PointLightHelper(PointLight light, float sphereSize = 1f) : base(JS.New("THREE.PointLightHelper", light, sphereSize)) { }
+
         #endregion
 
         #region Properties

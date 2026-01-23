@@ -98,6 +98,13 @@ namespace SpawnDev.BlazorJS.THREE
             return JSRef!.Call<AnimationAction>("clipAction", clip, optionalRoot, blendMode);
         }
         /// <summary>
+        /// Simplified ClipAction with just the animation clip
+        /// </summary>
+        public AnimationAction ClipAction(AnimationClip clip)
+        {
+            return JSRef!.Call<AnimationAction>("clipAction", clip);
+        }
+        /// <summary>
         /// clipAction(
         ///         clip: AnimationClip | string,
         ///         optionalRoot?: Object3D | AnimationObjectGroup,

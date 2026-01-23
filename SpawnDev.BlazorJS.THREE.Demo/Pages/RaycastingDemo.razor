@@ -1,0 +1,19 @@
+@page "/RaycastingDemo"
+@using SpawnDev.BlazorJS.THREE
+
+<h3>Raycasting Demo</h3>
+<p>Interactive object picking - hover to highlight, click to select objects.</p>
+
+<div style="width: 100%; height: 600px; position: relative;">
+    <canvas @ref="canvasRef" tabindex="0" style="width: 100%; height: 100%; display: block; outline: none;"></canvas>
+    <div style="position: absolute; top: 10px; left: 10px; color: white; background: rgba(0,0,0,0.7); padding: 10px; border-radius: 5px; font-size: 14px;">
+        @if (!string.IsNullOrEmpty(selectedInfo))
+        {
+            <span>@selectedInfo</span>
+        }
+        else
+        {
+            <span>Move mouse over objects to highlight. Click to select.</span>
+        }
+    </div>
+</div>

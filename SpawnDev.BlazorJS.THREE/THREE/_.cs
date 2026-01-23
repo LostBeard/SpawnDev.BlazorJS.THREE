@@ -60,10 +60,7 @@ public class ShaderMaterialParameters : MaterialParameters
 {
 
 }
-public class PointsMaterialParameters : MaterialParameters
-{
-
-}
+// PointsMaterialParameters moved to separate file with proper properties
 public class PointsNodeMaterialParameters : MaterialParameters
 {
 

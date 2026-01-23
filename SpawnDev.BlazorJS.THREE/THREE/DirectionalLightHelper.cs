@@ -9,6 +9,11 @@ namespace SpawnDev.BlazorJS.THREE
         public DirectionalLightHelper(IJSInProcessObjectReference _ref) : base(_ref) { }
 
         /// <summary>
+        /// Creates a DirectionalLightHelper with default size and automatic color
+        /// </summary>
+        public DirectionalLightHelper(DirectionalLight light, float size = 1f) : base(JS.New("THREE.DirectionalLightHelper", light, size)) { }
+
+        /// <summary>
         /// constructor(light: DirectionalLight, size?: number, color?: ColorRepresentation);
         /// </summary>
         public DirectionalLightHelper(DirectionalLight light, float size, ColorRepresentation color) : base(JS.New("THREE.DirectionalLightHelper", light, size, color)) { }
