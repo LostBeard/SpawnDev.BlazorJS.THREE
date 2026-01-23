@@ -1,8 +1,4 @@
-
-using System.Text;
 using Microsoft.JSInterop;
-using SpawnDev.BlazorJS;
-using SpawnDev.BlazorJS.JSObjects;
 
 namespace SpawnDev.BlazorJS.THREE
 {
@@ -11,12 +7,12 @@ namespace SpawnDev.BlazorJS.THREE
         #region Constructors
         /// <inheritdoc/>
         public Line3(IJSInProcessObjectReference _ref) : base(_ref) { }
-        
+
         /// <summary>
         /// constructor(start?: Vector3, end?: Vector3);
         /// </summary>
         public Line3(Vector3 start, Vector3 end) : base(JS.New("THREE.Line3", start, end)) { }
-        
+
         #endregion
 
         #region Properties

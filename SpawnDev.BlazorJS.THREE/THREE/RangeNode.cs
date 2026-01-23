@@ -1,8 +1,4 @@
-
-using System.Text;
 using Microsoft.JSInterop;
-using SpawnDev.BlazorJS;
-using SpawnDev.BlazorJS.JSObjects;
 
 namespace SpawnDev.BlazorJS.THREE
 {
@@ -11,12 +7,12 @@ namespace SpawnDev.BlazorJS.THREE
         #region Constructors
         /// <inheritdoc/>
         public RangeNode(IJSInProcessObjectReference _ref) : base(_ref) { }
-        
+
         /// <summary>
         /// constructor(minNode: Node, maxNode: Node);
         /// </summary>
         public RangeNode(Node minNode, Node maxNode) : base(JS.New("THREE.RangeNode", minNode, maxNode)) { }
-        
+
         #endregion
 
         #region Properties

@@ -1,8 +1,4 @@
-
-using System.Text;
 using Microsoft.JSInterop;
-using SpawnDev.BlazorJS;
-using SpawnDev.BlazorJS.JSObjects;
 
 namespace SpawnDev.BlazorJS.THREE
 {
@@ -11,7 +7,7 @@ namespace SpawnDev.BlazorJS.THREE
         #region Constructors
         /// <inheritdoc/>
         public StorageTextureNode(IJSInProcessObjectReference _ref) : base(_ref) { }
-        
+
         /// <summary>
         /// constructor(
         ///         value: Texture,
@@ -20,7 +16,7 @@ namespace SpawnDev.BlazorJS.THREE
         ///     );
         /// </summary>
         public StorageTextureNode(Texture value, ShaderNodeObject<Node> uvNode, Node storeNode) : base(JS.New("THREE.StorageTextureNode", value, uvNode, storeNode)) { }
-        
+
         #endregion
 
         #region Properties

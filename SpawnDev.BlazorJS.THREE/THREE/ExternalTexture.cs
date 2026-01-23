@@ -1,7 +1,4 @@
-
-using System.Text;
 using Microsoft.JSInterop;
-using SpawnDev.BlazorJS;
 using SpawnDev.BlazorJS.JSObjects;
 
 namespace SpawnDev.BlazorJS.THREE
@@ -11,12 +8,12 @@ namespace SpawnDev.BlazorJS.THREE
         #region Constructors
         /// <inheritdoc/>
         public ExternalTexture(IJSInProcessObjectReference _ref) : base(_ref) { }
-        
+
         /// <summary>
         /// constructor(sourceTexture?: WebGLTexture | GPUTexture | null);
         /// </summary>
         public ExternalTexture(Union<WebGLTexture, GPUTexture> sourceTexture) : base(JS.New("THREE.ExternalTexture", sourceTexture)) { }
-        
+
         #endregion
 
         #region Properties

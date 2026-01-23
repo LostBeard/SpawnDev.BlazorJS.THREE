@@ -1,8 +1,4 @@
-
-using System.Text;
 using Microsoft.JSInterop;
-using SpawnDev.BlazorJS;
-using SpawnDev.BlazorJS.JSObjects;
 
 namespace SpawnDev.BlazorJS.THREE
 {
@@ -11,12 +7,12 @@ namespace SpawnDev.BlazorJS.THREE
         #region Constructors
         /// <inheritdoc/>
         public Fog(IJSInProcessObjectReference _ref) : base(_ref) { }
-        
+
         /// <summary>
         /// constructor(color: ColorRepresentation, near?: number, far?: number);
         /// </summary>
         public Fog(ColorRepresentation color, float near, float far) : base(JS.New("THREE.Fog", color, near, far)) { }
-        
+
         #endregion
 
         #region Properties

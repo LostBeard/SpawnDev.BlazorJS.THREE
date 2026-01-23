@@ -1,8 +1,4 @@
-
-using System.Text;
 using Microsoft.JSInterop;
-using SpawnDev.BlazorJS;
-using SpawnDev.BlazorJS.JSObjects;
 
 namespace SpawnDev.BlazorJS.THREE
 {
@@ -11,12 +7,12 @@ namespace SpawnDev.BlazorJS.THREE
         #region Constructors
         /// <inheritdoc/>
         public OrthographicCamera(IJSInProcessObjectReference _ref) : base(_ref) { }
-        
+
         /// <summary>
         /// constructor(left?: number, right?: number, top?: number, bottom?: number, near?: number, far?: number);
         /// </summary>
         public OrthographicCamera(float left, float right, float top, float bottom, float near, float far) : base(JS.New("THREE.OrthographicCamera", left, right, top, bottom, near, far)) { }
-        
+
         #endregion
 
         #region Properties
@@ -54,14 +50,14 @@ namespace SpawnDev.BlazorJS.THREE
         public string Type { get => JSRef!.Get<string>("type"); }
         /// <summary>
         /// view: null | {
-                ///         enabled: boolean;
-                ///         fullWidth: number;
-                ///         fullHeight: number;
-                ///         offsetX: number;
-                ///         offsetY: number;
-                ///         width: number;
-                ///         height: number;
-                ///     };
+        ///         enabled: boolean;
+        ///         fullWidth: number;
+        ///         fullHeight: number;
+        ///         offsetX: number;
+        ///         offsetY: number;
+        ///         width: number;
+        ///         height: number;
+        ///     };
         /// </summary>
         public object View { get => JSRef!.Get<object>("view"); set => JSRef!.Set("view", value); }
         /// <summary>

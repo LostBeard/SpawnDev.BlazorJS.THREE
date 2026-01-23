@@ -1,7 +1,4 @@
-
-using System.Text;
 using Microsoft.JSInterop;
-using SpawnDev.BlazorJS;
 using SpawnDev.BlazorJS.JSObjects;
 
 namespace SpawnDev.BlazorJS.THREE
@@ -11,7 +8,7 @@ namespace SpawnDev.BlazorJS.THREE
         #region Constructors
         /// <inheritdoc/>
         public Int16BufferAttribute(IJSInProcessObjectReference _ref) : base(_ref) { }
-        
+
         /// <summary>
         /// constructor(
         ///         array: Iterable<number> | ArrayLike<number> | ArrayBuffer | number,
@@ -20,7 +17,7 @@ namespace SpawnDev.BlazorJS.THREE
         ///     );
         /// </summary>
         public Int16BufferAttribute(Union<IEnumerable<float>, ArrayLikeFloat, ArrayBuffer, float> array, float itemSize, bool normalized) : base(JS.New("THREE.Int16BufferAttribute", array, itemSize, normalized)) { }
-        
+
         #endregion
 
         #region Properties

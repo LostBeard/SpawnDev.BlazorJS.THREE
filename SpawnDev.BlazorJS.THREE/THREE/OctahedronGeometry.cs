@@ -1,8 +1,4 @@
-
-using System.Text;
 using Microsoft.JSInterop;
-using SpawnDev.BlazorJS;
-using SpawnDev.BlazorJS.JSObjects;
 
 namespace SpawnDev.BlazorJS.THREE
 {
@@ -11,12 +7,12 @@ namespace SpawnDev.BlazorJS.THREE
         #region Constructors
         /// <inheritdoc/>
         public OctahedronGeometry(IJSInProcessObjectReference _ref) : base(_ref) { }
-        
+
         /// <summary>
         /// constructor(radius?: number, detail?: number);
         /// </summary>
         public OctahedronGeometry(float radius, float detail) : base(JS.New("THREE.OctahedronGeometry", radius, detail)) { }
-        
+
         #endregion
 
         #region Properties

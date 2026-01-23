@@ -1,8 +1,4 @@
-
-using System.Text;
 using Microsoft.JSInterop;
-using SpawnDev.BlazorJS;
-using SpawnDev.BlazorJS.JSObjects;
 
 namespace SpawnDev.BlazorJS.THREE
 {
@@ -11,12 +7,12 @@ namespace SpawnDev.BlazorJS.THREE
         #region Constructors
         /// <inheritdoc/>
         public VolumeNodeMaterial(IJSInProcessObjectReference _ref) : base(_ref) { }
-        
+
         /// <summary>
         /// constructor(parameters?: VolumeNodeMaterialParameters);
         /// </summary>
         public VolumeNodeMaterial(VolumeNodeMaterialParameters parameters) : base(JS.New("THREE.VolumeNodeMaterial", parameters)) { }
-        
+
         #endregion
 
         #region Properties

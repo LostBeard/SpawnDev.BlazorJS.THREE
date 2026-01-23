@@ -1,9 +1,3 @@
-
-using System.Text;
-using Microsoft.JSInterop;
-using SpawnDev.BlazorJS;
-using SpawnDev.BlazorJS.JSObjects;
-
 namespace SpawnDev.BlazorJS.THREE
 {
     public interface RenderObjectData
@@ -11,14 +5,14 @@ namespace SpawnDev.BlazorJS.THREE
         #region Properties
         /// <summary>
         /// geometry: {
-                ///         id: number;
-                ///         attributes: AttributesData;
-                ///         indexVersion: number | null;
-                ///         drawRange: {
-                ///             start: number;
-                ///             count: number;
-                ///         };
-                ///     };
+        ///         id: number;
+        ///         attributes: AttributesData;
+        ///         indexVersion: number | null;
+        ///         drawRange: {
+        ///             start: number;
+        ///             count: number;
+        ///         };
+        ///     };
         /// </summary>
         object? Geometry { get; set; }
         /// <summary>

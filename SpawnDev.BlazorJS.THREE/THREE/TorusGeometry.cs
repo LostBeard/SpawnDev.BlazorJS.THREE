@@ -1,8 +1,4 @@
-
-using System.Text;
 using Microsoft.JSInterop;
-using SpawnDev.BlazorJS;
-using SpawnDev.BlazorJS.JSObjects;
 
 namespace SpawnDev.BlazorJS.THREE
 {
@@ -11,23 +7,23 @@ namespace SpawnDev.BlazorJS.THREE
         #region Constructors
         /// <inheritdoc/>
         public TorusGeometry(IJSInProcessObjectReference _ref) : base(_ref) { }
-        
+
         /// <summary>
         /// constructor(radius?: number, tube?: number, radialSegments?: number, tubularSegments?: number, arc?: number);
         /// </summary>
         public TorusGeometry(float radius, float tube, float radialSegments, float tubularSegments, float arc) : base(JS.New("THREE.TorusGeometry", radius, tube, radialSegments, tubularSegments, arc)) { }
-        
+
         #endregion
 
         #region Properties
         /// <summary>
         /// readonly parameters: {
-                ///         readonly radius: number;
-                ///         readonly tube: number;
-                ///         readonly radialSegments: number;
-                ///         readonly tubularSegments: number;
-                ///         readonly arc: number;
-                ///     };
+        ///         readonly radius: number;
+        ///         readonly tube: number;
+        ///         readonly radialSegments: number;
+        ///         readonly tubularSegments: number;
+        ///         readonly arc: number;
+        ///     };
         /// </summary>
         public object Parameters { get => JSRef!.Get<object>("parameters"); }
         /// <summary>

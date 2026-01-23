@@ -1,7 +1,4 @@
-
-using System.Text;
 using Microsoft.JSInterop;
-using SpawnDev.BlazorJS;
 using SpawnDev.BlazorJS.JSObjects;
 
 namespace SpawnDev.BlazorJS.THREE
@@ -11,12 +8,12 @@ namespace SpawnDev.BlazorJS.THREE
         #region Constructors
         /// <inheritdoc/>
         public Triangle(IJSInProcessObjectReference _ref) : base(_ref) { }
-        
+
         /// <summary>
         /// constructor(a?: Vector3, b?: Vector3, c?: Vector3);
         /// </summary>
         public Triangle(Vector3 a, Vector3 b, Vector3 c) : base(JS.New("THREE.Triangle", a, b, c)) { }
-        
+
         #endregion
 
         #region Properties

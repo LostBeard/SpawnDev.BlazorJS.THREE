@@ -1,8 +1,4 @@
-
-using System.Text;
 using Microsoft.JSInterop;
-using SpawnDev.BlazorJS;
-using SpawnDev.BlazorJS.JSObjects;
 
 namespace SpawnDev.BlazorJS.THREE
 {
@@ -11,7 +7,7 @@ namespace SpawnDev.BlazorJS.THREE
         #region Constructors
         /// <inheritdoc/>
         public NodeVarying(IJSInProcessObjectReference _ref) : base(_ref) { }
-        
+
         /// <summary>
         /// constructor(
         ///         name: string,
@@ -21,7 +17,7 @@ namespace SpawnDev.BlazorJS.THREE
         ///     );
         /// </summary>
         public NodeVarying(string name, string type, InterpolationSamplingType interpolationType, InterpolationSamplingMode interpolationSampling) : base(JS.New("THREE.NodeVarying", name, type, interpolationType, interpolationSampling)) { }
-        
+
         #endregion
 
         #region Properties

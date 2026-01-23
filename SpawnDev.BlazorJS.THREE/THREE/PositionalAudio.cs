@@ -1,8 +1,4 @@
-
-using System.Text;
 using Microsoft.JSInterop;
-using SpawnDev.BlazorJS;
-using SpawnDev.BlazorJS.JSObjects;
 
 namespace SpawnDev.BlazorJS.THREE
 {
@@ -11,21 +7,19 @@ namespace SpawnDev.BlazorJS.THREE
         #region Constructors
         /// <inheritdoc/>
         public PositionalAudio(IJSInProcessObjectReference _ref) : base(_ref) { }
-        
+
         /// <summary>
         /// constructor(listener: AudioListener);
         /// </summary>
         public PositionalAudio(AudioListener listener) : base(JS.New("THREE.PositionalAudio", listener)) { }
-        
+
         #endregion
 
         #region Properties
         /// <summary>
         /// panner: PannerNode;
         /// </summary>
-        public JSObject Panner { get => JSRef!.Get<JSObject>("panner"); set => JSRef!.Set("panner", value); }
-        public T GetPanner<T>() => JSRef!.Get<T>("panner");
-        public void SetPanner(object value) => JSRef!.Set("panner", value);
+        public PannerNode Panner { get => JSRef!.Get<PannerNode>("panner"); set => JSRef!.Set("panner", value); }
         #endregion
 
         #region Methods

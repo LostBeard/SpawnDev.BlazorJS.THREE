@@ -1,8 +1,4 @@
-
-using System.Text;
 using Microsoft.JSInterop;
-using SpawnDev.BlazorJS;
-using SpawnDev.BlazorJS.JSObjects;
 
 namespace SpawnDev.BlazorJS.THREE
 {
@@ -11,12 +7,12 @@ namespace SpawnDev.BlazorJS.THREE
         #region Constructors
         /// <inheritdoc/>
         public RemapNode(IJSInProcessObjectReference _ref) : base(_ref) { }
-        
+
         /// <summary>
         /// constructor(node: Node, inLowNode: Node, inHighNode: Node, outLowNode?: Node, outHighNode?: Node);
         /// </summary>
         public RemapNode(Node node, Node inLowNode, Node inHighNode, Node outLowNode, Node outHighNode) : base(JS.New("THREE.RemapNode", node, inLowNode, inHighNode, outLowNode, outHighNode)) { }
-        
+
         #endregion
 
         #region Properties

@@ -1,7 +1,4 @@
-
-using System.Text;
 using Microsoft.JSInterop;
-using SpawnDev.BlazorJS;
 using SpawnDev.BlazorJS.JSObjects;
 
 namespace SpawnDev.BlazorJS.THREE
@@ -11,7 +8,7 @@ namespace SpawnDev.BlazorJS.THREE
         #region Constructors
         /// <inheritdoc/>
         public ProgrammableStage(IJSInProcessObjectReference _ref) : base(_ref) { }
-        
+
         /// <summary>
         /// constructor(
         ///         code: string,
@@ -22,7 +19,7 @@ namespace SpawnDev.BlazorJS.THREE
         ///     );
         /// </summary>
         public ProgrammableStage(string code, string stage, string name, object transforms, Array<NodeAttribute> attributes) : base(JS.New("THREE.ProgrammableStage", code, stage, name, transforms, attributes)) { }
-        
+
         #endregion
 
         #region Properties

@@ -1,7 +1,4 @@
-
-using System.Text;
 using Microsoft.JSInterop;
-using SpawnDev.BlazorJS;
 using SpawnDev.BlazorJS.JSObjects;
 
 namespace SpawnDev.BlazorJS.THREE
@@ -11,7 +8,7 @@ namespace SpawnDev.BlazorJS.THREE
         #region Constructors
         /// <inheritdoc/>
         public Texture(IJSInProcessObjectReference _ref) : base(_ref) { }
-        
+
         /// <summary>
         /// constructor(
         ///         image?: TexImageSource | OffscreenCanvas,
@@ -27,8 +24,8 @@ namespace SpawnDev.BlazorJS.THREE
         ///     );
         /// </summary>
         public Texture(Union<TexImageSource, OffscreenCanvas> image, Mapping mapping, Wrapping wrapS, Wrapping wrapT, MagnificationTextureFilter magFilter, MinificationTextureFilter minFilter, PixelFormat format, TextureDataType type, float anisotropy, ColorSpace colorSpace) : base(JS.New("THREE.Texture", image, mapping, wrapS, wrapT, magFilter, minFilter, format, type, anisotropy, colorSpace)) { }
-        
-        
+
+
         /// <summary>
         /// constructor(
         ///         image: TexImageSource | OffscreenCanvas,
@@ -43,7 +40,7 @@ namespace SpawnDev.BlazorJS.THREE
         ///     );
         /// </summary>
         public Texture(Union<TexImageSource, OffscreenCanvas> image, Mapping mapping, Wrapping wrapS, Wrapping wrapT, MagnificationTextureFilter magFilter, MinificationTextureFilter minFilter, PixelFormat format, TextureDataType type, float anisotropy) : base(JS.New("THREE.Texture", image, mapping, wrapS, wrapT, magFilter, minFilter, format, type, anisotropy)) { }
-        
+
         #endregion
 
         #region Properties

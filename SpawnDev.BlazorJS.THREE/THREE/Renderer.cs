@@ -1,7 +1,4 @@
-
-using System.Text;
 using Microsoft.JSInterop;
-using SpawnDev.BlazorJS;
 using SpawnDev.BlazorJS.JSObjects;
 
 namespace SpawnDev.BlazorJS.THREE
@@ -47,8 +44,8 @@ namespace SpawnDev.BlazorJS.THREE
         /// <summary>
         /// get compile(): (scene: Object3D, camera: Camera, targetScene?: Scene | null) => Promise<void>;
         /// </summary>
-        public Task Compile(Object3D scene, Camera camera, Scene? targetScene = null) 
-            => targetScene ==  null ? JSRef!.CallVoidAsync("compile", scene, camera) : JSRef!.CallVoidAsync("compile", scene, camera, targetScene);
+        public Task Compile(Object3D scene, Camera camera, Scene? targetScene = null)
+            => targetScene == null ? JSRef!.CallVoidAsync("compile", scene, camera) : JSRef!.CallVoidAsync("compile", scene, camera, targetScene);
         /// <summary>
         /// CoordinateSystem;
         /// </summary>

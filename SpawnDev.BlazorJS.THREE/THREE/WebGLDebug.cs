@@ -1,9 +1,3 @@
-
-using System.Text;
-using Microsoft.JSInterop;
-using SpawnDev.BlazorJS;
-using SpawnDev.BlazorJS.JSObjects;
-
 namespace SpawnDev.BlazorJS.THREE
 {
     public interface WebGLDebug
@@ -15,13 +9,13 @@ namespace SpawnDev.BlazorJS.THREE
         bool? CheckShaderErrors { get; set; }
         /// <summary>
         /// onShaderError:
-                ///         | ((
-                ///             gl: WebGLRenderingContext,
-                ///             program: WebGLProgram,
-                ///             glVertexShader: WebGLShader,
-                ///             glFragmentShader: WebGLShader,
-                ///         ) => void)
-                ///         | null;
+        ///         | ((
+        ///             gl: WebGLRenderingContext,
+        ///             program: WebGLProgram,
+        ///             glVertexShader: WebGLShader,
+        ///             glFragmentShader: WebGLShader,
+        ///         ) => void)
+        ///         | null;
         /// </summary>
         Callback? OnShaderError { get; set; }
         #endregion

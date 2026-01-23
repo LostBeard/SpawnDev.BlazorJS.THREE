@@ -1,7 +1,4 @@
-
-using System.Text;
 using Microsoft.JSInterop;
-using SpawnDev.BlazorJS;
 using SpawnDev.BlazorJS.JSObjects;
 
 namespace SpawnDev.BlazorJS.THREE
@@ -11,12 +8,12 @@ namespace SpawnDev.BlazorJS.THREE
         #region Constructors
         /// <inheritdoc/>
         public WebGLBindingStates(IJSInProcessObjectReference _ref) : base(_ref) { }
-        
+
         /// <summary>
         /// constructor(gl: WebGLRenderingContext, attributes: WebGLAttributes);
         /// </summary>
         public WebGLBindingStates(WebGLRenderingContext gl, WebGLAttributes attributes) : base(JS.New("THREE.WebGLBindingStates", gl, attributes)) { }
-        
+
         #endregion
 
         #region Properties

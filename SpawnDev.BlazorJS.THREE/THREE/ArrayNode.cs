@@ -1,7 +1,4 @@
-
-using System.Text;
 using Microsoft.JSInterop;
-using SpawnDev.BlazorJS;
 using SpawnDev.BlazorJS.JSObjects;
 
 namespace SpawnDev.BlazorJS.THREE
@@ -11,12 +8,12 @@ namespace SpawnDev.BlazorJS.THREE
         #region Constructors
         /// <inheritdoc/>
         public ArrayNode(IJSInProcessObjectReference _ref) : base(_ref) { }
-        
+
         /// <summary>
         /// constructor(nodeType: string, count: number, values: Node[]);
         /// </summary>
         public ArrayNode(string nodeType, float count, Array<Node> values) : base(JS.New("THREE.ArrayNode", nodeType, count, values)) { }
-        
+
         #endregion
 
         #region Properties

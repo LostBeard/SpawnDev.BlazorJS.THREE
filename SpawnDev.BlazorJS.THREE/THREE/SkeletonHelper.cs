@@ -1,7 +1,4 @@
-
-using System.Text;
 using Microsoft.JSInterop;
-using SpawnDev.BlazorJS;
 using SpawnDev.BlazorJS.JSObjects;
 
 namespace SpawnDev.BlazorJS.THREE
@@ -11,12 +8,12 @@ namespace SpawnDev.BlazorJS.THREE
         #region Constructors
         /// <inheritdoc/>
         public SkeletonHelper(IJSInProcessObjectReference _ref) : base(_ref) { }
-        
+
         /// <summary>
         /// constructor(object: SkinnedMesh | Object3D);
         /// </summary>
         public SkeletonHelper(Union<SkinnedMesh, Object3D> obj) : base(JS.New("THREE.SkeletonHelper", obj)) { }
-        
+
         #endregion
 
         #region Properties

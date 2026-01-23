@@ -1,8 +1,4 @@
-
-using System.Text;
 using Microsoft.JSInterop;
-using SpawnDev.BlazorJS;
-using SpawnDev.BlazorJS.JSObjects;
 
 namespace SpawnDev.BlazorJS.THREE
 {
@@ -11,12 +7,12 @@ namespace SpawnDev.BlazorJS.THREE
         #region Constructors
         /// <inheritdoc/>
         public ToonOutlinePassNode(IJSInProcessObjectReference _ref) : base(_ref) { }
-        
+
         /// <summary>
         /// constructor(scene: Scene, camera: Camera, colorNode: Node, thicknessNode: Node, alphaNode: Node);
         /// </summary>
         public ToonOutlinePassNode(Scene scene, Camera camera, Node colorNode, Node thicknessNode, Node alphaNode) : base(JS.New("THREE.ToonOutlinePassNode", scene, camera, colorNode, thicknessNode, alphaNode)) { }
-        
+
         #endregion
 
         #region Properties

@@ -1,8 +1,4 @@
-
-using System.Text;
 using Microsoft.JSInterop;
-using SpawnDev.BlazorJS;
-using SpawnDev.BlazorJS.JSObjects;
 
 namespace SpawnDev.BlazorJS.THREE
 {
@@ -21,7 +17,7 @@ namespace SpawnDev.BlazorJS.THREE
         public Bindings Bindings { get => JSRef!.Get<Bindings>("bindings"); set => JSRef!.Set("bindings", value); }
         /// <summary>
         /// chainMaps: {
-                ///         [passId: string]: ChainMap<readonly[Object3D, Material, RenderContext, LightsNode], RenderObject>;
+        ///         [passId: string]: ChainMap<readonly[Object3D, Material, RenderContext, LightsNode], RenderObject>;
         /// </summary>
         public JSObject ChainMaps { get => JSRef!.Get<JSObject>("chainMaps"); set => JSRef!.Set("chainMaps", value); }
         /// <summary>

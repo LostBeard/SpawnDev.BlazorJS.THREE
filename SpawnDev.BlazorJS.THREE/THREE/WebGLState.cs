@@ -1,7 +1,4 @@
-
-using System.Text;
 using Microsoft.JSInterop;
-using SpawnDev.BlazorJS;
 using SpawnDev.BlazorJS.JSObjects;
 
 namespace SpawnDev.BlazorJS.THREE
@@ -11,21 +8,21 @@ namespace SpawnDev.BlazorJS.THREE
         #region Constructors
         /// <inheritdoc/>
         public WebGLState(IJSInProcessObjectReference _ref) : base(_ref) { }
-        
+
         /// <summary>
         /// constructor(gl: WebGLRenderingContext, extensions: WebGLExtensions);
         /// </summary>
         public WebGLState(WebGLRenderingContext gl, WebGLExtensions extensions) : base(JS.New("THREE.WebGLState", gl, extensions)) { }
-        
+
         #endregion
 
         #region Properties
         /// <summary>
         /// buffers: {
-                ///         color: WebGLColorBuffer;
-                ///         depth: WebGLDepthBuffer;
-                ///         stencil: WebGLStencilBuffer;
-                ///     };
+        ///         color: WebGLColorBuffer;
+        ///         depth: WebGLDepthBuffer;
+        ///         stencil: WebGLStencilBuffer;
+        ///     };
         /// </summary>
         public object Buffers { get => JSRef!.Get<object>("buffers"); set => JSRef!.Set("buffers", value); }
         #endregion

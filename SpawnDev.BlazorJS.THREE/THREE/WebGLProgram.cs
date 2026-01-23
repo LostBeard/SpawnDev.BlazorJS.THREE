@@ -1,7 +1,4 @@
-
-using System.Text;
 using Microsoft.JSInterop;
-using SpawnDev.BlazorJS;
 using SpawnDev.BlazorJS.JSObjects;
 
 namespace SpawnDev.BlazorJS.THREE
@@ -11,12 +8,12 @@ namespace SpawnDev.BlazorJS.THREE
         #region Constructors
         /// <inheritdoc/>
         public WebGLProgram(IJSInProcessObjectReference _ref) : base(_ref) { }
-        
+
         /// <summary>
         /// constructor(renderer: WebGLRenderer, cacheKey: string, parameters: object);
         /// </summary>
         public WebGLProgram(WebGLRenderer renderer, string cacheKey, object parameters) : base(JS.New("THREE.WebGLProgram", renderer, cacheKey, parameters)) { }
-        
+
         #endregion
 
         #region Properties

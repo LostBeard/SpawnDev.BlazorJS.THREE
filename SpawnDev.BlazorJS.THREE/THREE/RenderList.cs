@@ -1,7 +1,4 @@
-
-using System.Text;
 using Microsoft.JSInterop;
-using SpawnDev.BlazorJS;
 using SpawnDev.BlazorJS.JSObjects;
 
 namespace SpawnDev.BlazorJS.THREE
@@ -11,12 +8,12 @@ namespace SpawnDev.BlazorJS.THREE
         #region Constructors
         /// <inheritdoc/>
         public RenderList(IJSInProcessObjectReference _ref) : base(_ref) { }
-        
+
         /// <summary>
         /// constructor(lighting: Lighting, scene: Object3D, camera: Camera);
         /// </summary>
         public RenderList(Lighting lighting, Object3D scene, Camera camera) : base(JS.New("THREE.RenderList", lighting, scene, camera)) { }
-        
+
         #endregion
 
         #region Properties

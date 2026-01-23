@@ -1,8 +1,4 @@
-
-using System.Text;
 using Microsoft.JSInterop;
-using SpawnDev.BlazorJS;
-using SpawnDev.BlazorJS.JSObjects;
 
 namespace SpawnDev.BlazorJS.THREE
 {
@@ -11,12 +7,12 @@ namespace SpawnDev.BlazorJS.THREE
         #region Constructors
         /// <inheritdoc/>
         public ShadowNodeMaterial(IJSInProcessObjectReference _ref) : base(_ref) { }
-        
+
         /// <summary>
         /// constructor(parameters?: ShadowNodeMaterialParameters);
         /// </summary>
         public ShadowNodeMaterial(ShadowNodeMaterialParameters parameters) : base(JS.New("THREE.ShadowNodeMaterial", parameters)) { }
-        
+
         #endregion
 
         #region Properties

@@ -1,8 +1,4 @@
-
-using System.Text;
 using Microsoft.JSInterop;
-using SpawnDev.BlazorJS;
-using SpawnDev.BlazorJS.JSObjects;
 
 namespace SpawnDev.BlazorJS.THREE
 {
@@ -11,12 +7,12 @@ namespace SpawnDev.BlazorJS.THREE
         #region Constructors
         /// <inheritdoc/>
         public WebGPUBackend(IJSInProcessObjectReference _ref) : base(_ref) { }
-        
+
         /// <summary>
         /// constructor(parameters?: WebGPUBackendParameters);
         /// </summary>
         public WebGPUBackend(WebGPUBackendParameters parameters) : base(JS.New("THREE.WebGPUBackend", parameters)) { }
-        
+
         #endregion
 
         #region Properties

@@ -1,7 +1,4 @@
-
-using System.Text;
 using Microsoft.JSInterop;
-using SpawnDev.BlazorJS;
 using SpawnDev.BlazorJS.JSObjects;
 
 namespace SpawnDev.BlazorJS.THREE
@@ -11,12 +8,12 @@ namespace SpawnDev.BlazorJS.THREE
         #region Constructors
         /// <inheritdoc/>
         public AnimationClip(IJSInProcessObjectReference _ref) : base(_ref) { }
-        
+
         /// <summary>
         /// constructor(name?: string, duration?: number, tracks?: Array<KeyframeTrack>, blendMode?: AnimationBlendMode);
         /// </summary>
         public AnimationClip(string name, float duration, Array<KeyframeTrack> tracks, AnimationBlendMode blendMode) : base(JS.New("THREE.AnimationClip", name, duration, tracks, blendMode)) { }
-        
+
         #endregion
 
         #region Properties

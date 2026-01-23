@@ -1,7 +1,4 @@
-
-using System.Text;
 using Microsoft.JSInterop;
-using SpawnDev.BlazorJS;
 using SpawnDev.BlazorJS.JSObjects;
 
 namespace SpawnDev.BlazorJS.THREE
@@ -11,12 +8,12 @@ namespace SpawnDev.BlazorJS.THREE
         #region Constructors
         /// <inheritdoc/>
         public WebGLCubeRenderTarget(IJSInProcessObjectReference _ref) : base(_ref) { }
-        
+
         /// <summary>
         /// constructor(size?: number, options?: RenderTargetOptions);
         /// </summary>
         public WebGLCubeRenderTarget(float size, RenderTargetOptions options) : base(JS.New("THREE.WebGLCubeRenderTarget", size, options)) { }
-        
+
         #endregion
 
         #region Properties

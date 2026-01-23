@@ -1,8 +1,4 @@
-
-using System.Text;
 using Microsoft.JSInterop;
-using SpawnDev.BlazorJS;
-using SpawnDev.BlazorJS.JSObjects;
 
 namespace SpawnDev.BlazorJS.THREE
 {
@@ -11,12 +7,12 @@ namespace SpawnDev.BlazorJS.THREE
         #region Constructors
         /// <inheritdoc/>
         public ConditionalNode(IJSInProcessObjectReference _ref) : base(_ref) { }
-        
+
         /// <summary>
         /// constructor(condNode: Node, ifNode: Node, elseNode?: Node | null);
         /// </summary>
         public ConditionalNode(Node condNode, Node ifNode, Node elseNode) : base(JS.New("THREE.ConditionalNode", condNode, ifNode, elseNode)) { }
-        
+
         #endregion
 
         #region Properties

@@ -1,9 +1,3 @@
-
-using System.Text;
-using Microsoft.JSInterop;
-using SpawnDev.BlazorJS;
-using SpawnDev.BlazorJS.JSObjects;
-
 namespace SpawnDev.BlazorJS.THREE
 {
     public interface BufferGeometryJSON
@@ -11,17 +5,17 @@ namespace SpawnDev.BlazorJS.THREE
         #region Properties
         /// <summary>
         /// data?: {
-                ///         attributes: Record<string, BufferAttributeJSON>;
-                /// 
-                ///         index?: { type: string; array: number[] };
-                /// 
-                ///         morphAttributes?: Record<string, BufferAttributeJSON[]>;
-                ///         morphTargetsRelative?: boolean;
-                /// 
-                ///         groups?: GeometryGroup[];
-                /// 
-                ///         boundingSphere?: { center: Vector3Tuple; radius: number };
-                ///     };
+        ///         attributes: Record<string, BufferAttributeJSON>;
+        /// 
+        ///         index?: { type: string; array: number[] };
+        /// 
+        ///         morphAttributes?: Record<string, BufferAttributeJSON[]>;
+        ///         morphTargetsRelative?: boolean;
+        /// 
+        ///         groups?: GeometryGroup[];
+        /// 
+        ///         boundingSphere?: { center: Vector3Tuple; radius: number };
+        ///     };
         /// </summary>
         object? Data { get; set; }
         /// <summary>

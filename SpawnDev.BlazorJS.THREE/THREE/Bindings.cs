@@ -1,7 +1,4 @@
-
-using System.Text;
 using Microsoft.JSInterop;
-using SpawnDev.BlazorJS;
 using SpawnDev.BlazorJS.JSObjects;
 
 namespace SpawnDev.BlazorJS.THREE
@@ -11,7 +8,7 @@ namespace SpawnDev.BlazorJS.THREE
         #region Constructors
         /// <inheritdoc/>
         public Bindings(IJSInProcessObjectReference _ref) : base(_ref) { }
-        
+
         /// <summary>
         /// constructor(
         ///         backend: Backend,
@@ -23,7 +20,7 @@ namespace SpawnDev.BlazorJS.THREE
         ///     );
         /// </summary>
         public Bindings(Backend backend, Nodes nodes, Textures textures, Attributes attributes, Pipelines pipelines, Info info) : base(JS.New("THREE.Bindings", backend, nodes, textures, attributes, pipelines, info)) { }
-        
+
         #endregion
 
         #region Properties

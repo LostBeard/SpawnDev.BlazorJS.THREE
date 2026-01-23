@@ -1,8 +1,4 @@
-
-using System.Text;
 using Microsoft.JSInterop;
-using SpawnDev.BlazorJS;
-using SpawnDev.BlazorJS.JSObjects;
 
 namespace SpawnDev.BlazorJS.THREE
 {
@@ -11,12 +7,12 @@ namespace SpawnDev.BlazorJS.THREE
         #region Constructors
         /// <inheritdoc/>
         public InstancedMesh(IJSInProcessObjectReference _ref) : base(_ref) { }
-        
+
         /// <summary>
         /// constructor(geometry: TGeometry | undefined, material: TMaterial | undefined, count: number);
         /// </summary>
         public InstancedMesh(TGeometry geometry, TMaterial material, float count) : base(JS.New("THREE.InstancedMesh", geometry, material, count)) { }
-        
+
         #endregion
 
         #region Properties

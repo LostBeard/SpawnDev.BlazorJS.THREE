@@ -1,7 +1,4 @@
-
-using System.Text;
 using Microsoft.JSInterop;
-using SpawnDev.BlazorJS;
 using SpawnDev.BlazorJS.JSObjects;
 
 namespace SpawnDev.BlazorJS.THREE
@@ -11,12 +8,12 @@ namespace SpawnDev.BlazorJS.THREE
         #region Constructors
         /// <inheritdoc/>
         public DataArrayTexture(IJSInProcessObjectReference _ref) : base(_ref) { }
-        
+
         /// <summary>
         /// constructor(data?: BufferSource | null, width?: number, height?: number, depth?: number);
         /// </summary>
         public DataArrayTexture(BufferSource data, float width, float height, float depth) : base(JS.New("THREE.DataArrayTexture", data, width, height, depth)) { }
-        
+
         #endregion
 
         #region Properties

@@ -1,8 +1,4 @@
-
-using System.Text;
 using Microsoft.JSInterop;
-using SpawnDev.BlazorJS;
-using SpawnDev.BlazorJS.JSObjects;
 
 namespace SpawnDev.BlazorJS.THREE
 {
@@ -11,12 +7,12 @@ namespace SpawnDev.BlazorJS.THREE
         #region Constructors
         /// <inheritdoc/>
         public SampledTexture(IJSInProcessObjectReference _ref) : base(_ref) { }
-        
+
         /// <summary>
         /// constructor(name: string, texture: Texture | null);
         /// </summary>
         public SampledTexture(string name, Texture texture) : base(JS.New("THREE.SampledTexture", name, texture)) { }
-        
+
         #endregion
 
         #region Properties

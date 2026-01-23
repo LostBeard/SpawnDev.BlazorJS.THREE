@@ -1,7 +1,4 @@
-
-using System.Text;
 using Microsoft.JSInterop;
-using SpawnDev.BlazorJS;
 using SpawnDev.BlazorJS.JSObjects;
 
 namespace SpawnDev.BlazorJS.THREE
@@ -11,12 +8,12 @@ namespace SpawnDev.BlazorJS.THREE
         #region Constructors
         /// <inheritdoc/>
         public RenderContext(IJSInProcessObjectReference _ref) : base(_ref) { }
-        
+
         /// <summary>
         /// constructor();
         /// </summary>
         public RenderContext() : base(JS.New("THREE.RenderContext")) { }
-        
+
         #endregion
 
         #region Properties
@@ -34,11 +31,11 @@ namespace SpawnDev.BlazorJS.THREE
         public bool ClearColor { get => JSRef!.Get<bool>("clearColor"); set => JSRef!.Set("clearColor", value); }
         /// <summary>
         /// clearColorValue: {
-                ///         r: number;
-                ///         g: number;
-                ///         b: number;
-                ///         a: number;
-                ///     };
+        ///         r: number;
+        ///         g: number;
+        ///         b: number;
+        ///         a: number;
+        ///     };
         /// </summary>
         public object ClearColorValue { get => JSRef!.Get<object>("clearColorValue"); set => JSRef!.Set("clearColorValue", value); }
         /// <summary>

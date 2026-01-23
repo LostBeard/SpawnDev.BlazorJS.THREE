@@ -1,8 +1,4 @@
-
-using System.Text;
 using Microsoft.JSInterop;
-using SpawnDev.BlazorJS;
-using SpawnDev.BlazorJS.JSObjects;
 
 namespace SpawnDev.BlazorJS.THREE
 {
@@ -11,12 +7,12 @@ namespace SpawnDev.BlazorJS.THREE
         #region Constructors
         /// <inheritdoc/>
         public Spherical(IJSInProcessObjectReference _ref) : base(_ref) { }
-        
+
         /// <summary>
         /// constructor(radius?: number, phi?: number, theta?: number);
         /// </summary>
         public Spherical(float radius, float phi, float theta) : base(JS.New("THREE.Spherical", radius, phi, theta)) { }
-        
+
         #endregion
 
         #region Properties

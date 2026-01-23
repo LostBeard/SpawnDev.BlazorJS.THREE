@@ -1,8 +1,4 @@
-
-using System.Text;
 using Microsoft.JSInterop;
-using SpawnDev.BlazorJS;
-using SpawnDev.BlazorJS.JSObjects;
 
 namespace SpawnDev.BlazorJS.THREE
 {
@@ -11,7 +7,7 @@ namespace SpawnDev.BlazorJS.THREE
         #region Constructors
         /// <inheritdoc/>
         public AnimationAction(IJSInProcessObjectReference _ref) : base(_ref) { }
-        
+
         /// <summary>
         /// constructor(
         ///         mixer: AnimationMixer,
@@ -21,7 +17,7 @@ namespace SpawnDev.BlazorJS.THREE
         ///     );
         /// </summary>
         public AnimationAction(AnimationMixer mixer, AnimationClip clip, Object3D localRoot, AnimationBlendMode blendMode) : base(JS.New("THREE.AnimationAction", mixer, clip, localRoot, blendMode)) { }
-        
+
         #endregion
 
         #region Properties

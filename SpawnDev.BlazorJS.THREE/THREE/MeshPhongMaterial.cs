@@ -1,8 +1,4 @@
-
-using System.Text;
 using Microsoft.JSInterop;
-using SpawnDev.BlazorJS;
-using SpawnDev.BlazorJS.JSObjects;
 
 namespace SpawnDev.BlazorJS.THREE
 {
@@ -11,12 +7,12 @@ namespace SpawnDev.BlazorJS.THREE
         #region Constructors
         /// <inheritdoc/>
         public MeshPhongMaterial(IJSInProcessObjectReference _ref) : base(_ref) { }
-        
+
         /// <summary>
         /// constructor(parameters?: MeshPhongMaterialParameters);
         /// </summary>
         public MeshPhongMaterial(MeshPhongMaterialParameters parameters) : base(JS.New("THREE.MeshPhongMaterial", parameters)) { }
-        
+
         #endregion
 
         #region Properties

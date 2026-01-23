@@ -3406,7 +3406,7 @@ public partial class Constants
     /// }
     /// </summary>
     public const int _colorKeywords = 0xf0f8ff;///// <summary>
-                                                  ///// UniformsLib: {
+                                               ///// UniformsLib: {
     ///     common: {
     ///         diffuse: IUniform<Color>;
     ///         opacity: IUniform<number>;

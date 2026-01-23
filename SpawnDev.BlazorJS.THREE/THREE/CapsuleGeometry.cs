@@ -1,8 +1,4 @@
-
-using System.Text;
 using Microsoft.JSInterop;
-using SpawnDev.BlazorJS;
-using SpawnDev.BlazorJS.JSObjects;
 
 namespace SpawnDev.BlazorJS.THREE
 {
@@ -11,7 +7,7 @@ namespace SpawnDev.BlazorJS.THREE
         #region Constructors
         /// <inheritdoc/>
         public CapsuleGeometry(IJSInProcessObjectReference _ref) : base(_ref) { }
-        
+
         /// <summary>
         /// constructor(
         ///         radius?: number,
@@ -22,18 +18,18 @@ namespace SpawnDev.BlazorJS.THREE
         ///     );
         /// </summary>
         public CapsuleGeometry(float radius, float height, float capSegments, float radialSegments, float heightSegments) : base(JS.New("THREE.CapsuleGeometry", radius, height, capSegments, radialSegments, heightSegments)) { }
-        
+
         #endregion
 
         #region Properties
         /// <summary>
         /// readonly parameters: {
-                ///         readonly radius: number;
-                ///         readonly height: number;
-                ///         readonly capSegments: number;
-                ///         readonly radialSegments: number;
-                ///         readonly heightSegments: number;
-                ///     };
+        ///         readonly radius: number;
+        ///         readonly height: number;
+        ///         readonly capSegments: number;
+        ///         readonly radialSegments: number;
+        ///         readonly heightSegments: number;
+        ///     };
         /// </summary>
         public object Parameters { get => JSRef!.Get<object>("parameters"); }
         /// <summary>

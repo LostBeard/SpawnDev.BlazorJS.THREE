@@ -1,8 +1,4 @@
-
-using System.Text;
 using Microsoft.JSInterop;
-using SpawnDev.BlazorJS;
-using SpawnDev.BlazorJS.JSObjects;
 
 namespace SpawnDev.BlazorJS.THREE
 {
@@ -11,7 +7,7 @@ namespace SpawnDev.BlazorJS.THREE
         #region Constructors
         /// <inheritdoc/>
         public ArcCurve(IJSInProcessObjectReference _ref) : base(_ref) { }
-        
+
         /// <summary>
         /// constructor(
         ///         aX?: number,
@@ -23,7 +19,7 @@ namespace SpawnDev.BlazorJS.THREE
         ///     );
         /// </summary>
         public ArcCurve(float aX, float aY, float aRadius, float aStartAngle, float aEndAngle, bool aClockwise) : base(JS.New("THREE.ArcCurve", aX, aY, aRadius, aStartAngle, aEndAngle, aClockwise)) { }
-        
+
         #endregion
 
         #region Properties

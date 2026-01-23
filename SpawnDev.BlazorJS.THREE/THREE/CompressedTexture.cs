@@ -1,7 +1,4 @@
-
-using System.Text;
 using Microsoft.JSInterop;
-using SpawnDev.BlazorJS;
 using SpawnDev.BlazorJS.JSObjects;
 
 namespace SpawnDev.BlazorJS.THREE
@@ -11,7 +8,7 @@ namespace SpawnDev.BlazorJS.THREE
         #region Constructors
         /// <inheritdoc/>
         public CompressedTexture(IJSInProcessObjectReference _ref) : base(_ref) { }
-        
+
         /// <summary>
         /// constructor(
         ///         mipmaps: CompressedTextureMipmap[],
@@ -29,7 +26,7 @@ namespace SpawnDev.BlazorJS.THREE
         ///     );
         /// </summary>
         public CompressedTexture(Array<CompressedTextureMipmap> mipmaps, float width, float height, CompressedPixelFormat format, TextureDataType type, Mapping mapping, Wrapping wrapS, Wrapping wrapT, MagnificationTextureFilter magFilter, MinificationTextureFilter minFilter, float anisotropy, string colorSpace) : base(JS.NewApply("THREE.CompressedTexture", new object?[] { mipmaps, width, height, format, type, mapping, wrapS, wrapT, magFilter, minFilter, anisotropy, colorSpace })) { }
-        
+
         #endregion
 
         #region Properties

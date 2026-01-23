@@ -1,8 +1,4 @@
-
-using System.Text;
 using Microsoft.JSInterop;
-using SpawnDev.BlazorJS;
-using SpawnDev.BlazorJS.JSObjects;
 
 namespace SpawnDev.BlazorJS.THREE
 {
@@ -11,12 +7,12 @@ namespace SpawnDev.BlazorJS.THREE
         #region Constructors
         /// <inheritdoc/>
         public DirectionalLightHelper(IJSInProcessObjectReference _ref) : base(_ref) { }
-        
+
         /// <summary>
         /// constructor(light: DirectionalLight, size?: number, color?: ColorRepresentation);
         /// </summary>
         public DirectionalLightHelper(DirectionalLight light, float size, ColorRepresentation color) : base(JS.New("THREE.DirectionalLightHelper", light, size, color)) { }
-        
+
         #endregion
 
         #region Properties

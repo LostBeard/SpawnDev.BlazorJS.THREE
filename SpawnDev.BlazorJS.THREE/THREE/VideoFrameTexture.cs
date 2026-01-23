@@ -1,8 +1,4 @@
-
-using System.Text;
 using Microsoft.JSInterop;
-using SpawnDev.BlazorJS;
-using SpawnDev.BlazorJS.JSObjects;
 
 namespace SpawnDev.BlazorJS.THREE
 {
@@ -11,7 +7,7 @@ namespace SpawnDev.BlazorJS.THREE
         #region Constructors
         /// <inheritdoc/>
         public VideoFrameTexture(IJSInProcessObjectReference _ref) : base(_ref) { }
-        
+
         /// <summary>
         /// constructor(
         ///         mapping?: Mapping,
@@ -25,7 +21,7 @@ namespace SpawnDev.BlazorJS.THREE
         ///     );
         /// </summary>
         public VideoFrameTexture(Mapping mapping, Wrapping wrapS, Wrapping wrapT, MagnificationTextureFilter magFilter, MinificationTextureFilter minFilter, PixelFormat format, TextureDataType type, float anisotropy) : base(JS.New("THREE.VideoFrameTexture", mapping, wrapS, wrapT, magFilter, minFilter, format, type, anisotropy)) { }
-        
+
         #endregion
 
         #region Properties

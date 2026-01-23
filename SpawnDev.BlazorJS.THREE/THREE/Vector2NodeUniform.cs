@@ -1,8 +1,4 @@
-
-using System.Text;
 using Microsoft.JSInterop;
-using SpawnDev.BlazorJS;
-using SpawnDev.BlazorJS.JSObjects;
 
 namespace SpawnDev.BlazorJS.THREE
 {
@@ -11,12 +7,12 @@ namespace SpawnDev.BlazorJS.THREE
         #region Constructors
         /// <inheritdoc/>
         public Vector2NodeUniform(IJSInProcessObjectReference _ref) : base(_ref) { }
-        
+
         /// <summary>
         /// constructor(nodeUniform: NodeUniform<Vector2>);
         /// </summary>
         public Vector2NodeUniform(NodeUniform<Vector2> nodeUniform) : base(JS.New("THREE.Vector2NodeUniform", nodeUniform)) { }
-        
+
         #endregion
 
         #region Properties

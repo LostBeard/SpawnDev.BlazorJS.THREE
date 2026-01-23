@@ -1,8 +1,4 @@
-
-using System.Text;
 using Microsoft.JSInterop;
-using SpawnDev.BlazorJS;
-using SpawnDev.BlazorJS.JSObjects;
 
 namespace SpawnDev.BlazorJS.THREE
 {
@@ -11,7 +7,7 @@ namespace SpawnDev.BlazorJS.THREE
         #region Constructors
         /// <inheritdoc/>
         public EllipseCurve(IJSInProcessObjectReference _ref) : base(_ref) { }
-        
+
         /// <summary>
         /// constructor(
         ///         aX?: number,
@@ -25,7 +21,7 @@ namespace SpawnDev.BlazorJS.THREE
         ///     );
         /// </summary>
         public EllipseCurve(float aX, float aY, float xRadius, float yRadius, float aStartAngle, float aEndAngle, bool aClockwise, float aRotation) : base(JS.New("THREE.EllipseCurve", aX, aY, xRadius, yRadius, aStartAngle, aEndAngle, aClockwise, aRotation)) { }
-        
+
         #endregion
 
         #region Properties

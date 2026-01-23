@@ -1,7 +1,4 @@
-
-using System.Text;
 using Microsoft.JSInterop;
-using SpawnDev.BlazorJS;
 using SpawnDev.BlazorJS.JSObjects;
 
 namespace SpawnDev.BlazorJS.THREE
@@ -11,7 +8,7 @@ namespace SpawnDev.BlazorJS.THREE
         #region Constructors
         /// <inheritdoc/>
         public CubeTexture(IJSInProcessObjectReference _ref) : base(_ref) { }
-        
+
         /// <summary>
         /// constructor(
         ///         images?: any[], // HTMLImageElement or HTMLCanvasElement
@@ -27,7 +24,7 @@ namespace SpawnDev.BlazorJS.THREE
         ///     );
         /// </summary>
         public CubeTexture(Array<object> images, CubeTextureMapping mapping, Wrapping wrapS, Wrapping wrapT, MagnificationTextureFilter magFilter, MinificationTextureFilter minFilter, PixelFormat format, TextureDataType type, float anisotropy, string colorSpace) : base(JS.New("THREE.CubeTexture", images, mapping, wrapS, wrapT, magFilter, minFilter, format, type, anisotropy, colorSpace)) { }
-        
+
         #endregion
 
         #region Properties

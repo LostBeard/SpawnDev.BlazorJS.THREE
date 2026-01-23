@@ -1,8 +1,4 @@
-
-using System.Text;
 using Microsoft.JSInterop;
-using SpawnDev.BlazorJS;
-using SpawnDev.BlazorJS.JSObjects;
 
 namespace SpawnDev.BlazorJS.THREE
 {
@@ -11,12 +7,12 @@ namespace SpawnDev.BlazorJS.THREE
         #region Constructors
         /// <inheritdoc/>
         public SkinnedMesh(IJSInProcessObjectReference _ref) : base(_ref) { }
-        
+
         /// <summary>
         /// constructor(geometry?: TGeometry, material?: TMaterial, useVertexTexture?: boolean);
         /// </summary>
         public SkinnedMesh(Geometry geometry, Material material, bool useVertexTexture) : base(JS.New("THREE.SkinnedMesh", geometry, material, useVertexTexture)) { }
-        
+
         #endregion
 
         #region Properties

@@ -1,8 +1,4 @@
-
-using System.Text;
 using Microsoft.JSInterop;
-using SpawnDev.BlazorJS;
-using SpawnDev.BlazorJS.JSObjects;
 
 namespace SpawnDev.BlazorJS.THREE
 {
@@ -11,12 +7,12 @@ namespace SpawnDev.BlazorJS.THREE
         #region Constructors
         /// <inheritdoc/>
         public RectAreaLight(IJSInProcessObjectReference _ref) : base(_ref) { }
-        
+
         /// <summary>
         /// constructor(color?: ColorRepresentation, intensity?: number, width?: number, height?: number);
         /// </summary>
         public RectAreaLight(ColorRepresentation color, float intensity, float width, float height) : base(JS.New("THREE.RectAreaLight", color, intensity, width, height)) { }
-        
+
         #endregion
 
         #region Properties

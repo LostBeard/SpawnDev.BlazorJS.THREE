@@ -1,8 +1,4 @@
-
-using System.Text;
 using Microsoft.JSInterop;
-using SpawnDev.BlazorJS;
-using SpawnDev.BlazorJS.JSObjects;
 
 namespace SpawnDev.BlazorJS.THREE
 {
@@ -11,12 +7,12 @@ namespace SpawnDev.BlazorJS.THREE
         #region Constructors
         /// <inheritdoc/>
         public IcosahedronGeometry(IJSInProcessObjectReference _ref) : base(_ref) { }
-        
+
         /// <summary>
         /// constructor(radius?: number, detail?: number);
         /// </summary>
         public IcosahedronGeometry(float radius, float detail) : base(JS.New("THREE.IcosahedronGeometry", radius, detail)) { }
-        
+
         #endregion
 
         #region Properties

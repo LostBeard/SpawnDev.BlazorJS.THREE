@@ -1,8 +1,4 @@
-
-using System.Text;
 using Microsoft.JSInterop;
-using SpawnDev.BlazorJS;
-using SpawnDev.BlazorJS.JSObjects;
 
 namespace SpawnDev.BlazorJS.THREE
 {
@@ -11,12 +7,12 @@ namespace SpawnDev.BlazorJS.THREE
         #region Constructors
         /// <inheritdoc/>
         public ViewportDepthNode(IJSInProcessObjectReference _ref) : base(_ref) { }
-        
+
         /// <summary>
         /// constructor(scope: ViewportDepthNodeScope, valueNode?: Node | null);
         /// </summary>
         public ViewportDepthNode(ViewportDepthNodeScope scope, Node valueNode) : base(JS.New("THREE.ViewportDepthNode", scope, valueNode)) { }
-        
+
         #endregion
 
         #region Properties

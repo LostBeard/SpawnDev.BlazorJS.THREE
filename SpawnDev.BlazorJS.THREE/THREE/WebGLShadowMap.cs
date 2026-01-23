@@ -1,7 +1,4 @@
-
-using System.Text;
 using Microsoft.JSInterop;
-using SpawnDev.BlazorJS;
 using SpawnDev.BlazorJS.JSObjects;
 
 namespace SpawnDev.BlazorJS.THREE
@@ -11,12 +8,12 @@ namespace SpawnDev.BlazorJS.THREE
         #region Constructors
         /// <inheritdoc/>
         public WebGLShadowMap(IJSInProcessObjectReference _ref) : base(_ref) { }
-        
+
         /// <summary>
         /// constructor(_renderer: WebGLRenderer, _objects: WebGLObjects, _capabilities: WebGLCapabilities);
         /// </summary>
         public WebGLShadowMap(WebGLRenderer _renderer, WebGLObjects _objects, WebGLCapabilities _capabilities) : base(JS.New("THREE.WebGLShadowMap", _renderer, _objects, _capabilities)) { }
-        
+
         #endregion
 
         #region Properties

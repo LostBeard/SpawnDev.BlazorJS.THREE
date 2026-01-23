@@ -1,7 +1,4 @@
-
-using System.Text;
 using Microsoft.JSInterop;
-using SpawnDev.BlazorJS;
 using SpawnDev.BlazorJS.JSObjects;
 
 namespace SpawnDev.BlazorJS.THREE
@@ -11,12 +8,12 @@ namespace SpawnDev.BlazorJS.THREE
         #region Constructors
         /// <inheritdoc/>
         public Pipelines(IJSInProcessObjectReference _ref) : base(_ref) { }
-        
+
         /// <summary>
         /// constructor(backend: Backend, nodes: Nodes);
         /// </summary>
         public Pipelines(Backend backend, Nodes nodes) : base(JS.New("THREE.Pipelines", backend, nodes)) { }
-        
+
         #endregion
 
         #region Properties
@@ -38,10 +35,10 @@ namespace SpawnDev.BlazorJS.THREE
         public Nodes Nodes { get => JSRef!.Get<Nodes>("nodes"); set => JSRef!.Set("nodes", value); }
         /// <summary>
         /// programs: {
-                ///         vertex: Map<string, ProgrammableStage>;
-                ///         fragment: Map<string, ProgrammableStage>;
-                ///         compute: Map<string, ProgrammableStage>;
-                ///     };
+        ///         vertex: Map<string, ProgrammableStage>;
+        ///         fragment: Map<string, ProgrammableStage>;
+        ///         compute: Map<string, ProgrammableStage>;
+        ///     };
         /// </summary>
         public object Programs { get => JSRef!.Get<object>("programs"); set => JSRef!.Set("programs", value); }
         #endregion

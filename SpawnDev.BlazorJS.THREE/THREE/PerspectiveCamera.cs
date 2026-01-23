@@ -1,8 +1,4 @@
-
-using System.Text;
 using Microsoft.JSInterop;
-using SpawnDev.BlazorJS;
-using SpawnDev.BlazorJS.JSObjects;
 
 namespace SpawnDev.BlazorJS.THREE
 {
@@ -11,7 +7,7 @@ namespace SpawnDev.BlazorJS.THREE
         #region Constructors
         /// <inheritdoc/>
         public PerspectiveCamera(IJSInProcessObjectReference _ref) : base(_ref) { }
-        
+
         /// <summary>
         /// constructor(fov?: number, aspect?: number, near?: number, far?: number);
         /// </summary>
@@ -62,14 +58,14 @@ namespace SpawnDev.BlazorJS.THREE
         public string Type { get => JSRef!.Get<string>("type"); }
         /// <summary>
         /// view: null | {
-                ///         enabled: boolean;
-                ///         fullWidth: number;
-                ///         fullHeight: number;
-                ///         offsetX: number;
-                ///         offsetY: number;
-                ///         width: number;
-                ///         height: number;
-                ///     };
+        ///         enabled: boolean;
+        ///         fullWidth: number;
+        ///         fullHeight: number;
+        ///         offsetX: number;
+        ///         offsetY: number;
+        ///         width: number;
+        ///         height: number;
+        ///     };
         /// </summary>
         public object View { get => JSRef!.Get<object>("view"); set => JSRef!.Set("view", value); }
         /// <summary>

@@ -1,8 +1,4 @@
-
-using System.Text;
 using Microsoft.JSInterop;
-using SpawnDev.BlazorJS;
-using SpawnDev.BlazorJS.JSObjects;
 
 namespace SpawnDev.BlazorJS.THREE
 {
@@ -11,12 +7,12 @@ namespace SpawnDev.BlazorJS.THREE
         #region Constructors
         /// <inheritdoc/>
         public PassTextureNode(IJSInProcessObjectReference _ref) : base(_ref) { }
-        
+
         /// <summary>
         /// constructor(passNode: PassNode, texture: Texture);
         /// </summary>
         public PassTextureNode(PassNode passNode, Texture texture) : base(JS.New("THREE.PassTextureNode", passNode, texture)) { }
-        
+
         #endregion
 
         #region Properties

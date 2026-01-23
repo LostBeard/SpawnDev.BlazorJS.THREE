@@ -1,8 +1,4 @@
-
-using System.Text;
 using Microsoft.JSInterop;
-using SpawnDev.BlazorJS;
-using SpawnDev.BlazorJS.JSObjects;
 
 namespace SpawnDev.BlazorJS.THREE
 {
@@ -11,12 +7,12 @@ namespace SpawnDev.BlazorJS.THREE
         #region Constructors
         /// <inheritdoc/>
         public PropertyMixer(IJSInProcessObjectReference _ref) : base(_ref) { }
-        
+
         /// <summary>
         /// constructor(binding: PropertyBinding, typeName: string, valueSize: number);
         /// </summary>
         public PropertyMixer(PropertyBinding binding, string typeName, float valueSize) : base(JS.New("THREE.PropertyMixer", binding, typeName, valueSize)) { }
-        
+
         #endregion
 
         #region Properties

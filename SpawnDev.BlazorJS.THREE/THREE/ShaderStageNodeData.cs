@@ -1,9 +1,3 @@
-
-using System.Text;
-using Microsoft.JSInterop;
-using SpawnDev.BlazorJS;
-using SpawnDev.BlazorJS.JSObjects;
-
 namespace SpawnDev.BlazorJS.THREE
 {
     public interface ShaderStageNodeData
@@ -11,13 +5,13 @@ namespace SpawnDev.BlazorJS.THREE
         #region Properties
         /// <summary>
         /// properties?:
-                ///         | (
-                ///             & {
-                ///                 outputNode: Node | null;
-                ///                 initialized?: boolean | undefined;
-                ///             }
-                ///             & {
-                ///                 [K in
+        ///         | (
+        ///             & {
+        ///                 outputNode: Node | null;
+        ///                 initialized?: boolean | undefined;
+        ///             }
+        ///             & {
+        ///                 [K in
         /// </summary>
         object? Properties { get; set; }
         #endregion

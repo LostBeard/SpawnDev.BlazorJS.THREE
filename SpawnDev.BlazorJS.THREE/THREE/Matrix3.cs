@@ -1,7 +1,4 @@
-
-using System.Text;
 using Microsoft.JSInterop;
-using SpawnDev.BlazorJS;
 using SpawnDev.BlazorJS.JSObjects;
 
 namespace SpawnDev.BlazorJS.THREE
@@ -11,13 +8,13 @@ namespace SpawnDev.BlazorJS.THREE
         #region Constructors
         /// <inheritdoc/>
         public Matrix3(IJSInProcessObjectReference _ref) : base(_ref) { }
-        
+
         /// <summary>
         /// constructor();
         /// </summary>
         public Matrix3() : base(JS.New("THREE.Matrix3")) { }
-        
-        
+
+
         /// <summary>
         /// constructor(
         ///         n11: number,
@@ -32,7 +29,7 @@ namespace SpawnDev.BlazorJS.THREE
         ///     );
         /// </summary>
         public Matrix3(float n11, float n12, float n13, float n21, float n22, float n23, float n31, float n32, float n33) : base(JS.New("THREE.Matrix3", n11, n12, n13, n21, n22, n23, n31, n32, n33)) { }
-        
+
         #endregion
 
         #region Properties

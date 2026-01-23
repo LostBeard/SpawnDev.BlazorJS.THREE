@@ -1,8 +1,4 @@
-
-using System.Text;
 using Microsoft.JSInterop;
-using SpawnDev.BlazorJS;
-using SpawnDev.BlazorJS.JSObjects;
 
 namespace SpawnDev.BlazorJS.THREE
 {
@@ -16,7 +12,7 @@ namespace SpawnDev.BlazorJS.THREE
         /// constructor(skyColor?: ColorRepresentation, groundColor?: ColorRepresentation, intensity?: number);
         /// </summary>
         public HemisphereLight(ColorRepresentation skyColor, ColorRepresentation groundColor, float intensity) : base(JS.New("THREE.HemisphereLight", skyColor, groundColor, intensity)) { }
-        
+
         #endregion
 
         #region Properties

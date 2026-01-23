@@ -1,8 +1,4 @@
-
-using System.Text;
 using Microsoft.JSInterop;
-using SpawnDev.BlazorJS;
-using SpawnDev.BlazorJS.JSObjects;
 
 namespace SpawnDev.BlazorJS.THREE
 {
@@ -11,12 +7,12 @@ namespace SpawnDev.BlazorJS.THREE
         #region Constructors
         /// <inheritdoc/>
         public MeshPhysicalNodeMaterial(IJSInProcessObjectReference _ref) : base(_ref) { }
-        
+
         /// <summary>
         /// constructor(parameters?: MeshPhysicalNodeMaterialParameters);
         /// </summary>
         public MeshPhysicalNodeMaterial(MeshPhysicalNodeMaterialParameters parameters) : base(JS.New("THREE.MeshPhysicalNodeMaterial", parameters)) { }
-        
+
         #endregion
 
         #region Properties

@@ -1,8 +1,4 @@
-
-using System.Text;
 using Microsoft.JSInterop;
-using SpawnDev.BlazorJS;
-using SpawnDev.BlazorJS.JSObjects;
 
 namespace SpawnDev.BlazorJS.THREE
 {
@@ -11,12 +7,12 @@ namespace SpawnDev.BlazorJS.THREE
         #region Constructors
         /// <inheritdoc/>
         public MeshToonMaterial(IJSInProcessObjectReference _ref) : base(_ref) { }
-        
+
         /// <summary>
         /// constructor(parameters?: MeshToonMaterialParameters);
         /// </summary>
         public MeshToonMaterial(MeshToonMaterialParameters parameters) : base(JS.New("THREE.MeshToonMaterial", parameters)) { }
-        
+
         #endregion
 
         #region Properties

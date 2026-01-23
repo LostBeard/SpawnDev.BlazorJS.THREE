@@ -1,8 +1,4 @@
-
-using System.Text;
 using Microsoft.JSInterop;
-using SpawnDev.BlazorJS;
-using SpawnDev.BlazorJS.JSObjects;
 
 namespace SpawnDev.BlazorJS.THREE
 {
@@ -11,22 +7,22 @@ namespace SpawnDev.BlazorJS.THREE
         #region Constructors
         /// <inheritdoc/>
         public PlaneGeometry(IJSInProcessObjectReference _ref) : base(_ref) { }
-        
+
         /// <summary>
         /// constructor(width?: number, height?: number, widthSegments?: number, heightSegments?: number);
         /// </summary>
         public PlaneGeometry(float width, float height, float widthSegments, float heightSegments) : base(JS.New("THREE.PlaneGeometry", width, height, widthSegments, heightSegments)) { }
-        
+
         #endregion
 
         #region Properties
         /// <summary>
         /// readonly parameters: {
-                ///         readonly width: number;
-                ///         readonly height: number;
-                ///         readonly widthSegments: number;
-                ///         readonly heightSegments: number;
-                ///     };
+        ///         readonly width: number;
+        ///         readonly height: number;
+        ///         readonly widthSegments: number;
+        ///         readonly heightSegments: number;
+        ///     };
         /// </summary>
         public object Parameters { get => JSRef!.Get<object>("parameters"); }
         /// <summary>

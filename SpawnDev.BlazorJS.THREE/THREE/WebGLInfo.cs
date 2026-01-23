@@ -1,7 +1,4 @@
-
-using System.Text;
 using Microsoft.JSInterop;
-using SpawnDev.BlazorJS;
 using SpawnDev.BlazorJS.JSObjects;
 
 namespace SpawnDev.BlazorJS.THREE
@@ -11,12 +8,12 @@ namespace SpawnDev.BlazorJS.THREE
         #region Constructors
         /// <inheritdoc/>
         public WebGLInfo(IJSInProcessObjectReference _ref) : base(_ref) { }
-        
+
         /// <summary>
         /// constructor(gl: WebGLRenderingContext);
         /// </summary>
         public WebGLInfo(WebGLRenderingContext gl) : base(JS.New("THREE.WebGLInfo", gl)) { }
-        
+
         #endregion
 
         #region Properties
@@ -26,9 +23,9 @@ namespace SpawnDev.BlazorJS.THREE
         public bool AutoReset { get => JSRef!.Get<bool>("autoReset"); set => JSRef!.Set("autoReset", value); }
         /// <summary>
         /// memory: {
-                ///         geometries: number;
-                ///         textures: number;
-                ///     };
+        ///         geometries: number;
+        ///         textures: number;
+        ///     };
         /// </summary>
         public object Memory { get => JSRef!.Get<object>("memory"); set => JSRef!.Set("memory", value); }
         /// <summary>
@@ -37,12 +34,12 @@ namespace SpawnDev.BlazorJS.THREE
         public Array<WebGLProgram> Programs { get => JSRef!.Get<Array<WebGLProgram>>("programs"); set => JSRef!.Set("programs", value); }
         /// <summary>
         /// render: {
-                ///         calls: number;
-                ///         frame: number;
-                ///         lines: number;
-                ///         points: number;
-                ///         triangles: number;
-                ///     };
+        ///         calls: number;
+        ///         frame: number;
+        ///         lines: number;
+        ///         points: number;
+        ///         triangles: number;
+        ///     };
         /// </summary>
         public object Render { get => JSRef!.Get<object>("render"); set => JSRef!.Set("render", value); }
         #endregion

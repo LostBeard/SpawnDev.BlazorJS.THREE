@@ -1,8 +1,4 @@
-
-using System.Text;
 using Microsoft.JSInterop;
-using SpawnDev.BlazorJS;
-using SpawnDev.BlazorJS.JSObjects;
 
 namespace SpawnDev.BlazorJS.THREE
 {
@@ -11,12 +7,12 @@ namespace SpawnDev.BlazorJS.THREE
         #region Constructors
         /// <inheritdoc/>
         public ContextNode(IJSInProcessObjectReference _ref) : base(_ref) { }
-        
+
         /// <summary>
         /// constructor(node: Node, value?: NodeBuilderContext);
         /// </summary>
         public ContextNode(Node node, NodeBuilderContext value) : base(JS.New("THREE.ContextNode", node, value)) { }
-        
+
         #endregion
 
         #region Properties

@@ -1,8 +1,4 @@
-
-using System.Text;
 using Microsoft.JSInterop;
-using SpawnDev.BlazorJS;
-using SpawnDev.BlazorJS.JSObjects;
 
 namespace SpawnDev.BlazorJS.THREE
 {
@@ -11,7 +7,7 @@ namespace SpawnDev.BlazorJS.THREE
         #region Constructors
         /// <inheritdoc/>
         public ProjectorLight(IJSInProcessObjectReference _ref) : base(_ref) { }
-        
+
         /// <summary>
         /// constructor(
         ///         color?: ColorRepresentation,
@@ -23,7 +19,7 @@ namespace SpawnDev.BlazorJS.THREE
         ///     );
         /// </summary>
         public ProjectorLight(ColorRepresentation color, float intensity, float distance, float angle, float penumbra, float decay) : base(JS.New("THREE.ProjectorLight", color, intensity, distance, angle, penumbra, decay)) { }
-        
+
         #endregion
 
         #region Properties

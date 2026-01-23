@@ -1,8 +1,4 @@
-
-using System.Text;
 using Microsoft.JSInterop;
-using SpawnDev.BlazorJS;
-using SpawnDev.BlazorJS.JSObjects;
 
 namespace SpawnDev.BlazorJS.THREE
 {
@@ -11,7 +7,7 @@ namespace SpawnDev.BlazorJS.THREE
         #region Constructors
         /// <inheritdoc/>
         public ColorSpaceNode(IJSInProcessObjectReference _ref) : base(_ref) { }
-        
+
         /// <summary>
         /// constructor(
         ///         colorNode: Node,
@@ -20,7 +16,7 @@ namespace SpawnDev.BlazorJS.THREE
         ///     );
         /// </summary>
         public ColorSpaceNode(Node colorNode, string source, string target) : base(JS.New("THREE.ColorSpaceNode", colorNode, source, target)) { }
-        
+
         #endregion
 
         #region Properties

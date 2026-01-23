@@ -1,7 +1,4 @@
-
-using System.Text;
 using Microsoft.JSInterop;
-using SpawnDev.BlazorJS;
 using SpawnDev.BlazorJS.JSObjects;
 
 namespace SpawnDev.BlazorJS.THREE
@@ -11,7 +8,7 @@ namespace SpawnDev.BlazorJS.THREE
         #region Constructors
         /// <inheritdoc/>
         public GLBufferAttribute(IJSInProcessObjectReference _ref) : base(_ref) { }
-        
+
         /// <summary>
         /// constructor(
         ///         buffer: WebGLBuffer,
@@ -23,7 +20,7 @@ namespace SpawnDev.BlazorJS.THREE
         ///     );
         /// </summary>
         public GLBufferAttribute(WebGLBuffer buffer, GLenum type, float itemSize, float elementSize, float count, bool normalized) : base(JS.New("THREE.GLBufferAttribute", buffer, type, itemSize, elementSize, count, normalized)) { }
-        
+
         #endregion
 
         #region Properties

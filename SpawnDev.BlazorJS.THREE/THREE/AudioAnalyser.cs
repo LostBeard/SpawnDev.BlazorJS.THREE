@@ -1,7 +1,4 @@
-
-using System.Text;
 using Microsoft.JSInterop;
-using SpawnDev.BlazorJS;
 using SpawnDev.BlazorJS.JSObjects;
 
 namespace SpawnDev.BlazorJS.THREE
@@ -11,12 +8,12 @@ namespace SpawnDev.BlazorJS.THREE
         #region Constructors
         /// <inheritdoc/>
         public AudioAnalyser(IJSInProcessObjectReference _ref) : base(_ref) { }
-        
+
         /// <summary>
         /// constructor(audio: Audio<AudioNode>, fftSize?: number);
         /// </summary>
         public AudioAnalyser(Audio audio, float fftSize) : base(JS.New("THREE.AudioAnalyser", audio, fftSize)) { }
-        
+
         #endregion
 
         #region Properties

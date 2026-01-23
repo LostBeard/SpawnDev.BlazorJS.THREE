@@ -1,9 +1,3 @@
-
-using System.Text;
-using Microsoft.JSInterop;
-using SpawnDev.BlazorJS;
-using SpawnDev.BlazorJS.JSObjects;
-
 namespace SpawnDev.BlazorJS.THREE
 {
     public interface RendererState
@@ -43,16 +37,16 @@ namespace SpawnDev.BlazorJS.THREE
         float? PixelRatio { get; set; }
         /// <summary>
         /// renderObjectFunction:
-                ///         | ((
-                ///             object: Object3D,
-                ///             scene: Scene,
-                ///             camera: Camera,
-                ///             geometry: BufferGeometry,
-                ///             material: Material,
-                ///             group: GeometryGroup,
-                ///             lightsNode: LightsNode,
-                ///         ) => void)
-                ///         | null;
+        ///         | ((
+        ///             object: Object3D,
+        ///             scene: Scene,
+        ///             camera: Camera,
+        ///             geometry: BufferGeometry,
+        ///             material: Material,
+        ///             group: GeometryGroup,
+        ///             lightsNode: LightsNode,
+        ///         ) => void)
+        ///         | null;
         /// </summary>
         Callback? RenderObjectFunction { get; set; }
         /// <summary>

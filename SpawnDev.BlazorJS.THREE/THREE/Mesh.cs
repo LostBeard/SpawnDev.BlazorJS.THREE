@@ -1,7 +1,4 @@
-
-using System.Text;
 using Microsoft.JSInterop;
-using SpawnDev.BlazorJS;
 using SpawnDev.BlazorJS.JSObjects;
 
 namespace SpawnDev.BlazorJS.THREE
@@ -18,7 +15,7 @@ namespace SpawnDev.BlazorJS.THREE
         /// <summary>
         /// geometry: TGeometry;
         /// </summary>
-        public TGeometry Geometry_Get<TGeometry>()  => JSRef!.Get<TGeometry>("geometry");
+        public TGeometry Geometry_Get<TGeometry>() => JSRef!.Get<TGeometry>("geometry");
         /// <summary>
         /// geometry: TGeometry;
         /// </summary>
@@ -77,12 +74,12 @@ namespace SpawnDev.BlazorJS.THREE
         #region Constructors
         /// <inheritdoc/>
         public Mesh(IJSInProcessObjectReference _ref) : base(_ref) { }
-        
+
         /// <summary>
         /// constructor(geometry?: TGeometry, material?: TMaterial);
         /// </summary>
         public Mesh(TGeometry geometry, TMaterial material) : base(JS.New("THREE.Mesh", geometry, material)) { }
-        
+
         #endregion
 
         #region Properties

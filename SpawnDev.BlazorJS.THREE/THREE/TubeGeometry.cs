@@ -1,7 +1,4 @@
-
-using System.Text;
 using Microsoft.JSInterop;
-using SpawnDev.BlazorJS;
 using SpawnDev.BlazorJS.JSObjects;
 
 namespace SpawnDev.BlazorJS.THREE
@@ -11,7 +8,7 @@ namespace SpawnDev.BlazorJS.THREE
         #region Constructors
         /// <inheritdoc/>
         public TubeGeometry(IJSInProcessObjectReference _ref) : base(_ref) { }
-        
+
         /// <summary>
         /// constructor(
         ///         path?: Curve<Vector3>,
@@ -22,7 +19,7 @@ namespace SpawnDev.BlazorJS.THREE
         ///     );
         /// </summary>
         public TubeGeometry(Curve<Vector3> path, float tubularSegments, float radius, float radialSegments, bool closed) : base(JS.New("THREE.TubeGeometry", path, tubularSegments, radius, radialSegments, closed)) { }
-        
+
         #endregion
 
         #region Properties
@@ -36,12 +33,12 @@ namespace SpawnDev.BlazorJS.THREE
         public Array<Vector3> Normals { get => JSRef!.Get<Array<Vector3>>("normals"); set => JSRef!.Set("normals", value); }
         /// <summary>
         /// readonly parameters: {
-                ///         readonly path: Curve<Vector3>;
-                ///         readonly tubularSegments: number;
-                ///         readonly radius: number;
-                ///         readonly radialSegments: number;
-                ///         readonly closed: boolean;
-                ///     };
+        ///         readonly path: Curve<Vector3>;
+        ///         readonly tubularSegments: number;
+        ///         readonly radius: number;
+        ///         readonly radialSegments: number;
+        ///         readonly closed: boolean;
+        ///     };
         /// </summary>
         public object Parameters { get => JSRef!.Get<object>("parameters"); }
         /// <summary>

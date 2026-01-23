@@ -1,8 +1,4 @@
-
-using System.Text;
 using Microsoft.JSInterop;
-using SpawnDev.BlazorJS;
-using SpawnDev.BlazorJS.JSObjects;
 
 namespace SpawnDev.BlazorJS.THREE
 {
@@ -11,12 +7,12 @@ namespace SpawnDev.BlazorJS.THREE
         #region Constructors
         /// <inheritdoc/>
         public Info(IJSInProcessObjectReference _ref) : base(_ref) { }
-        
+
         /// <summary>
         /// constructor();
         /// </summary>
         public Info() : base(JS.New("THREE.Info")) { }
-        
+
         #endregion
 
         #region Properties
@@ -30,10 +26,10 @@ namespace SpawnDev.BlazorJS.THREE
         public float Calls { get => JSRef!.Get<float>("calls"); set => JSRef!.Set("calls", value); }
         /// <summary>
         /// compute: {
-                ///         calls: number;
-                ///         frameCalls: number;
-                ///         timestamp: number;
-                ///     };
+        ///         calls: number;
+        ///         frameCalls: number;
+        ///         timestamp: number;
+        ///     };
         /// </summary>
         public object Compute { get => JSRef!.Get<object>("compute"); set => JSRef!.Set("compute", value); }
         /// <summary>
@@ -42,21 +38,21 @@ namespace SpawnDev.BlazorJS.THREE
         public float Frame { get => JSRef!.Get<float>("frame"); set => JSRef!.Set("frame", value); }
         /// <summary>
         /// memory: {
-                ///         geometries: number;
-                ///         textures: number;
-                ///     };
+        ///         geometries: number;
+        ///         textures: number;
+        ///     };
         /// </summary>
         public object Memory { get => JSRef!.Get<object>("memory"); set => JSRef!.Set("memory", value); }
         /// <summary>
         /// render: {
-                ///         calls: number;
-                ///         frameCalls: number;
-                ///         drawCalls: number;
-                ///         triangles: number;
-                ///         points: number;
-                ///         lines: number;
-                ///         timestamp: number;
-                ///     };
+        ///         calls: number;
+        ///         frameCalls: number;
+        ///         drawCalls: number;
+        ///         triangles: number;
+        ///         points: number;
+        ///         lines: number;
+        ///         timestamp: number;
+        ///     };
         /// </summary>
         public object Render { get => JSRef!.Get<object>("render"); set => JSRef!.Set("render", value); }
         #endregion

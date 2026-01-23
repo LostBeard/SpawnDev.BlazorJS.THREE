@@ -1,7 +1,3 @@
-
-using System.Text;
-using Microsoft.JSInterop;
-using SpawnDev.BlazorJS;
 using SpawnDev.BlazorJS.JSObjects;
 
 namespace SpawnDev.BlazorJS.THREE
@@ -15,10 +11,10 @@ namespace SpawnDev.BlazorJS.THREE
         bool? Clipping { get; set; }
         /// <summary>
         /// defaultAttributeValues: {
-                ///         color: [number, number, number];
-                ///         uv: [number, number];
-                ///         uv1: [number, number];
-                ///     };
+        ///         color: [number, number, number];
+        ///         uv: [number, number];
+        ///         uv1: [number, number];
+        ///     };
         /// </summary>
         object? DefaultAttributeValues { get; set; }
         /// <summary>
@@ -27,9 +23,9 @@ namespace SpawnDev.BlazorJS.THREE
         object? Defines { get; set; }
         /// <summary>
         /// extensions: {
-                ///         clipCullDistance: boolean;
-                ///         multiDraw: boolean;
-                ///     };
+        ///         clipCullDistance: boolean;
+        ///         multiDraw: boolean;
+        ///     };
         /// </summary>
         object? Extensions { get; set; }
         /// <summary>

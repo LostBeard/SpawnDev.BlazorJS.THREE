@@ -1,8 +1,4 @@
-
-using System.Text;
 using Microsoft.JSInterop;
-using SpawnDev.BlazorJS;
-using SpawnDev.BlazorJS.JSObjects;
 
 namespace SpawnDev.BlazorJS.THREE
 {
@@ -11,12 +7,12 @@ namespace SpawnDev.BlazorJS.THREE
         #region Constructors
         /// <inheritdoc/>
         public CubeRenderTarget(IJSInProcessObjectReference _ref) : base(_ref) { }
-        
+
         /// <summary>
         /// constructor(size?: number, options?: RenderTargetOptions);
         /// </summary>
         public CubeRenderTarget(float size, RenderTargetOptions options) : base(JS.New("THREE.CubeRenderTarget", size, options)) { }
-        
+
         #endregion
 
         #region Properties

@@ -1,7 +1,4 @@
-
-using System.Text;
 using Microsoft.JSInterop;
-using SpawnDev.BlazorJS;
 using SpawnDev.BlazorJS.JSObjects;
 
 namespace SpawnDev.BlazorJS.THREE
@@ -11,7 +8,7 @@ namespace SpawnDev.BlazorJS.THREE
         #region Constructors
         /// <inheritdoc/>
         public KeyframeTrack(IJSInProcessObjectReference _ref) : base(_ref) { }
-        
+
         /// <summary>
         /// constructor(
         ///         name: string,
@@ -21,7 +18,7 @@ namespace SpawnDev.BlazorJS.THREE
         ///     );
         /// </summary>
         public KeyframeTrack(string name, ArrayLikeFloat times, ArrayLike<Union<float, string, bool>> values, InterpolationModes interpolation) : base(JS.New("THREE.KeyframeTrack", name, times, values, interpolation)) { }
-        
+
         #endregion
 
         #region Properties

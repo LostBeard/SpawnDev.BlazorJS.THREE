@@ -1,8 +1,4 @@
-
-using System.Text;
 using Microsoft.JSInterop;
-using SpawnDev.BlazorJS;
-using SpawnDev.BlazorJS.JSObjects;
 
 namespace SpawnDev.BlazorJS.THREE
 {
@@ -11,12 +7,12 @@ namespace SpawnDev.BlazorJS.THREE
         #region Constructors
         /// <inheritdoc/>
         public RTTNode(IJSInProcessObjectReference _ref) : base(_ref) { }
-        
+
         /// <summary>
         /// constructor(node: Node, width?: number | null, height?: number | null, options?: RTTNodeOptions);
         /// </summary>
         public RTTNode(Node node, float width, float height, RTTNodeOptions options) : base(JS.New("THREE.RTTNode", node, width, height, options)) { }
-        
+
         #endregion
 
         #region Properties

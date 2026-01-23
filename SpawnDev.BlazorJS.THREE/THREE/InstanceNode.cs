@@ -1,8 +1,4 @@
-
-using System.Text;
 using Microsoft.JSInterop;
-using SpawnDev.BlazorJS;
-using SpawnDev.BlazorJS.JSObjects;
 
 namespace SpawnDev.BlazorJS.THREE
 {
@@ -11,7 +7,7 @@ namespace SpawnDev.BlazorJS.THREE
         #region Constructors
         /// <inheritdoc/>
         public InstanceNode(IJSInProcessObjectReference _ref) : base(_ref) { }
-        
+
         /// <summary>
         /// constructor(
         ///         count: number,
@@ -20,7 +16,7 @@ namespace SpawnDev.BlazorJS.THREE
         ///     );
         /// </summary>
         public InstanceNode(float count, InstancedBufferAttribute instanceMatrix, InstancedBufferAttribute instanceColor) : base(JS.New("THREE.InstanceNode", count, instanceMatrix, instanceColor)) { }
-        
+
         #endregion
 
         #region Properties

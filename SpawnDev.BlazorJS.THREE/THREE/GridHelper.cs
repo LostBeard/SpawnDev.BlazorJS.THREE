@@ -1,8 +1,4 @@
-
-using System.Text;
 using Microsoft.JSInterop;
-using SpawnDev.BlazorJS;
-using SpawnDev.BlazorJS.JSObjects;
 
 namespace SpawnDev.BlazorJS.THREE
 {
@@ -11,12 +7,12 @@ namespace SpawnDev.BlazorJS.THREE
         #region Constructors
         /// <inheritdoc/>
         public GridHelper(IJSInProcessObjectReference _ref) : base(_ref) { }
-        
+
         /// <summary>
         /// constructor(size?: number, divisions?: number, color1?: ColorRepresentation, color2?: ColorRepresentation);
         /// </summary>
         public GridHelper(float size, float divisions, ColorRepresentation color1, ColorRepresentation color2) : base(JS.New("THREE.GridHelper", size, divisions, color1, color2)) { }
-        
+
         #endregion
 
         #region Properties

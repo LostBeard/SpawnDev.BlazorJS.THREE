@@ -1,7 +1,4 @@
-
-using System.Text;
 using Microsoft.JSInterop;
-using SpawnDev.BlazorJS;
 using SpawnDev.BlazorJS.JSObjects;
 
 namespace SpawnDev.BlazorJS.THREE
@@ -11,12 +8,12 @@ namespace SpawnDev.BlazorJS.THREE
         #region Constructors
         /// <inheritdoc/>
         public NodeLibrary(IJSInProcessObjectReference _ref) : base(_ref) { }
-        
+
         /// <summary>
         /// constructor();
         /// </summary>
         public NodeLibrary() : base(JS.New("THREE.NodeLibrary")) { }
-        
+
         #endregion
 
         #region Properties
@@ -30,8 +27,8 @@ namespace SpawnDev.BlazorJS.THREE
         //public WeakMap<object> LightNodes { get => JSRef!.Get<WeakMap<object>>("lightNodes"); set => JSRef!.Set("lightNodes", value); }
         /// <summary>
         /// materialNodes: Map<string, {
-                ///         new(): NodeMaterial;
-                ///     }>;
+        ///         new(): NodeMaterial;
+        ///     }>;
         /// </summary>
         public Map<string, object> MaterialNodes { get => JSRef!.Get<Map<string, object>>("materialNodes"); set => JSRef!.Set("materialNodes", value); }
         /// <summary>

@@ -1,7 +1,4 @@
-
-using System.Text;
 using Microsoft.JSInterop;
-using SpawnDev.BlazorJS;
 using SpawnDev.BlazorJS.JSObjects;
 
 namespace SpawnDev.BlazorJS.THREE
@@ -11,12 +8,12 @@ namespace SpawnDev.BlazorJS.THREE
         #region Constructors
         /// <inheritdoc/>
         public Controls(IJSInProcessObjectReference _ref) : base(_ref) { }
-        
+
         /// <summary>
         /// constructor(object: Object3D, domElement?: HTMLElement | null);
         /// </summary>
         public Controls(Object3D obj, HTMLElement domElement) : base(JS.New("THREE.Controls", obj, domElement)) { }
-        
+
         #endregion
 
         #region Properties

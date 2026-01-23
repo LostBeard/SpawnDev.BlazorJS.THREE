@@ -1,7 +1,4 @@
-
-using System.Text;
 using Microsoft.JSInterop;
-using SpawnDev.BlazorJS;
 using SpawnDev.BlazorJS.JSObjects;
 
 namespace SpawnDev.BlazorJS.THREE
@@ -11,7 +8,7 @@ namespace SpawnDev.BlazorJS.THREE
         #region Constructors
         /// <inheritdoc/>
         public NodeBuilderState(IJSInProcessObjectReference _ref) : base(_ref) { }
-        
+
         /// <summary>
         /// constructor(
         ///         vertexShader: string | null,
@@ -27,7 +24,7 @@ namespace SpawnDev.BlazorJS.THREE
         ///     );
         /// </summary>
         public NodeBuilderState(string vertexShader, string fragmentShader, string computeShader, Array<NodeAttribute> nodeAttributes, Array<BindGroup> bindings, Array<Node> updateNodes, Array<Node> updateBeforeNodes, Array<Node> updateAfterNodes, NodeMaterialObserver observer, Array<object> transforms) : base(JS.New("THREE.NodeBuilderState", vertexShader, fragmentShader, computeShader, nodeAttributes, bindings, updateNodes, updateBeforeNodes, updateAfterNodes, observer, transforms)) { }
-        
+
         #endregion
 
         #region Properties

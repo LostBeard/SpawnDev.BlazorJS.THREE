@@ -1,8 +1,4 @@
-
-using System.Text;
 using Microsoft.JSInterop;
-using SpawnDev.BlazorJS;
-using SpawnDev.BlazorJS.JSObjects;
 
 namespace SpawnDev.BlazorJS.THREE
 {
@@ -11,12 +7,12 @@ namespace SpawnDev.BlazorJS.THREE
         #region Constructors
         /// <inheritdoc/>
         public CubicBezierCurve(IJSInProcessObjectReference _ref) : base(_ref) { }
-        
+
         /// <summary>
         /// constructor(v0?: Vector2, v1?: Vector2, v2?: Vector2, v3?: Vector2);
         /// </summary>
         public CubicBezierCurve(Vector2 v0, Vector2 v1, Vector2 v2, Vector2 v3) : base(JS.New("THREE.CubicBezierCurve", v0, v1, v2, v3)) { }
-        
+
         #endregion
 
         #region Properties

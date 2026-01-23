@@ -1,8 +1,4 @@
-
-using System.Text;
 using Microsoft.JSInterop;
-using SpawnDev.BlazorJS;
-using SpawnDev.BlazorJS.JSObjects;
 
 namespace SpawnDev.BlazorJS.THREE
 {
@@ -11,12 +7,12 @@ namespace SpawnDev.BlazorJS.THREE
         #region Constructors
         /// <inheritdoc/>
         public Euler(IJSInProcessObjectReference _ref) : base(_ref) { }
-        
+
         /// <summary>
         /// constructor(x?: number, y?: number, z?: number, order?: EulerOrder);
         /// </summary>
         public Euler(float x, float y, float z, EulerOrder order) : base(JS.New("THREE.Euler", x, y, z, order)) { }
-        
+
         #endregion
 
         #region Properties

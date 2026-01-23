@@ -1,8 +1,4 @@
-
-using System.Text;
 using Microsoft.JSInterop;
-using SpawnDev.BlazorJS;
-using SpawnDev.BlazorJS.JSObjects;
 
 namespace SpawnDev.BlazorJS.THREE
 {
@@ -11,7 +7,7 @@ namespace SpawnDev.BlazorJS.THREE
         #region Constructors
         /// <inheritdoc/>
         public SSSLightingModel(IJSInProcessObjectReference _ref) : base(_ref) { }
-        
+
         /// <summary>
         /// constructor(
         ///         clearcoat?: boolean,
@@ -24,7 +20,7 @@ namespace SpawnDev.BlazorJS.THREE
         ///     );
         /// </summary>
         public SSSLightingModel(bool clearcoat, bool sheen, bool iridescence, bool anisotropy, bool transmission, bool dispersion, bool sss) : base(JS.New("THREE.SSSLightingModel", clearcoat, sheen, iridescence, anisotropy, transmission, dispersion, sss)) { }
-        
+
         #endregion
 
         #region Properties

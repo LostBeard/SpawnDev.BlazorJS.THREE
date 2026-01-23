@@ -1,8 +1,4 @@
-
-using System.Text;
 using Microsoft.JSInterop;
-using SpawnDev.BlazorJS;
-using SpawnDev.BlazorJS.JSObjects;
 
 namespace SpawnDev.BlazorJS.THREE
 {
@@ -11,7 +7,7 @@ namespace SpawnDev.BlazorJS.THREE
         #region Constructors
         /// <inheritdoc/>
         public ArrowHelper(IJSInProcessObjectReference _ref) : base(_ref) { }
-        
+
         /// <summary>
         /// constructor(
         ///         dir?: Vector3,
@@ -23,7 +19,7 @@ namespace SpawnDev.BlazorJS.THREE
         ///     );
         /// </summary>
         public ArrowHelper(Vector3 dir, Vector3 origin, float length, ColorRepresentation color, float headLength, float headWidth) : base(JS.New("THREE.ArrowHelper", dir, origin, length, color, headLength, headWidth)) { }
-        
+
         #endregion
 
         #region Properties

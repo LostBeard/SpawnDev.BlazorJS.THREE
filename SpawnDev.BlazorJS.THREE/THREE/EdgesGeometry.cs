@@ -1,8 +1,4 @@
-
-using System.Text;
 using Microsoft.JSInterop;
-using SpawnDev.BlazorJS;
-using SpawnDev.BlazorJS.JSObjects;
 
 namespace SpawnDev.BlazorJS.THREE
 {
@@ -16,20 +12,20 @@ namespace SpawnDev.BlazorJS.THREE
         #region Constructors
         /// <inheritdoc/>
         public EdgesGeometry(IJSInProcessObjectReference _ref) : base(_ref) { }
-        
+
         /// <summary>
         /// constructor(geometry?: TBufferGeometry | null, thresholdAngle?: number);
         /// </summary>
         public EdgesGeometry(TBufferGeometry geometry, float thresholdAngle) : base(JS.New("THREE.EdgesGeometry", geometry, thresholdAngle)) { }
-        
+
         #endregion
 
         #region Properties
         /// <summary>
         /// readonly parameters: {
-                ///         readonly geometry: TBufferGeometry | null;
-                ///         readonly thresholdAngle: number;
-                ///     };
+        ///         readonly geometry: TBufferGeometry | null;
+        ///         readonly thresholdAngle: number;
+        ///     };
         /// </summary>
         public object Parameters { get => JSRef!.Get<object>("parameters"); }
         /// <summary>

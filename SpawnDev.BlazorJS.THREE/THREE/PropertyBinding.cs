@@ -1,8 +1,4 @@
-
-using System.Text;
 using Microsoft.JSInterop;
-using SpawnDev.BlazorJS;
-using SpawnDev.BlazorJS.JSObjects;
 
 namespace SpawnDev.BlazorJS.THREE
 {
@@ -11,12 +7,12 @@ namespace SpawnDev.BlazorJS.THREE
         #region Constructors
         /// <inheritdoc/>
         public PropertyBinding(IJSInProcessObjectReference _ref) : base(_ref) { }
-        
+
         /// <summary>
         /// constructor(rootNode: Object3D | Skeleton, path: string, parsedPath?: object | null);
         /// </summary>
         public PropertyBinding(Union<Object3D, Skeleton> rootNode, string path, object parsedPath) : base(JS.New("THREE.PropertyBinding", rootNode, path, parsedPath)) { }
-        
+
         #endregion
 
         #region Properties

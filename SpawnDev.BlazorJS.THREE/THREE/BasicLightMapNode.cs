@@ -1,8 +1,4 @@
-
-using System.Text;
 using Microsoft.JSInterop;
-using SpawnDev.BlazorJS;
-using SpawnDev.BlazorJS.JSObjects;
 
 namespace SpawnDev.BlazorJS.THREE
 {
@@ -11,12 +7,12 @@ namespace SpawnDev.BlazorJS.THREE
         #region Constructors
         /// <inheritdoc/>
         public BasicLightMapNode(IJSInProcessObjectReference _ref) : base(_ref) { }
-        
+
         /// <summary>
         /// constructor(lightMapNode?: Node | null);
         /// </summary>
         public BasicLightMapNode(Node lightMapNode) : base(JS.New("THREE.BasicLightMapNode", lightMapNode)) { }
-        
+
         #endregion
 
         #region Properties

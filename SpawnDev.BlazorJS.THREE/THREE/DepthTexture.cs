@@ -1,8 +1,4 @@
-
-using System.Text;
 using Microsoft.JSInterop;
-using SpawnDev.BlazorJS;
-using SpawnDev.BlazorJS.JSObjects;
 
 namespace SpawnDev.BlazorJS.THREE
 {
@@ -11,7 +7,7 @@ namespace SpawnDev.BlazorJS.THREE
         #region Constructors
         /// <inheritdoc/>
         public DepthTexture(IJSInProcessObjectReference _ref) : base(_ref) { }
-        
+
         /// <summary>
         /// constructor(
         ///         width: number,
@@ -28,7 +24,7 @@ namespace SpawnDev.BlazorJS.THREE
         ///     );
         /// </summary>
         public DepthTexture(float width, float height, TextureDataType type, Mapping mapping, Wrapping wrapS, Wrapping wrapT, MagnificationTextureFilter magFilter, MinificationTextureFilter minFilter, float anisotropy, DepthTexturePixelFormat format, float depth) : base(JS.NewApply("THREE.DepthTexture", new object?[] { width, height, type, mapping, wrapS, wrapT, magFilter, minFilter, anisotropy, format, depth })) { }
-        
+
         #endregion
 
         #region Properties

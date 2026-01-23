@@ -1,7 +1,3 @@
-
-using System.Text;
-using Microsoft.JSInterop;
-using SpawnDev.BlazorJS;
 using SpawnDev.BlazorJS.JSObjects;
 
 namespace SpawnDev.BlazorJS.THREE
@@ -19,8 +15,8 @@ namespace SpawnDev.BlazorJS.THREE
         DepthTexture? DepthTexture { get; set; }
         /// <summary>
         /// depthTextureMips?: {
-                ///         [activeMipmapLevel: number]: DepthTexture;
-                ///     };
+        ///         [activeMipmapLevel: number]: DepthTexture;
+        ///     };
         /// </summary>
         object? DepthTextureMips { get; set; }
         /// <summary>

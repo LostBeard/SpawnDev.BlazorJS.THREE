@@ -1,9 +1,3 @@
-
-using System.Text;
-using Microsoft.JSInterop;
-using SpawnDev.BlazorJS;
-using SpawnDev.BlazorJS.JSObjects;
-
 namespace SpawnDev.BlazorJS.THREE
 {
     public interface XRManagerEventMap
@@ -11,8 +5,8 @@ namespace SpawnDev.BlazorJS.THREE
         #region Properties
         /// <summary>
         /// planesdetected: {
-                ///         data: XRFrame;
-                ///     };
+        ///         data: XRFrame;
+        ///     };
         /// </summary>
         object? Planesdetected { get; set; }
         /// <summary>

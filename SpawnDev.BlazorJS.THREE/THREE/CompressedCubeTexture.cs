@@ -1,7 +1,4 @@
-
-using System.Text;
 using Microsoft.JSInterop;
-using SpawnDev.BlazorJS;
 using SpawnDev.BlazorJS.JSObjects;
 
 namespace SpawnDev.BlazorJS.THREE
@@ -11,7 +8,7 @@ namespace SpawnDev.BlazorJS.THREE
         #region Constructors
         /// <inheritdoc/>
         public CompressedCubeTexture(IJSInProcessObjectReference _ref) : base(_ref) { }
-        
+
         /// <summary>
         /// constructor(
         ///         images: Array<{ width: number; height: number }>,
@@ -20,7 +17,7 @@ namespace SpawnDev.BlazorJS.THREE
         ///     );
         /// </summary>
         public CompressedCubeTexture(Array<object> images, CompressedPixelFormat format, TextureDataType type) : base(JS.New("THREE.CompressedCubeTexture", images, format, type)) { }
-        
+
         #endregion
 
         #region Properties

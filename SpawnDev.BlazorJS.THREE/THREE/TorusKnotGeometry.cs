@@ -1,8 +1,4 @@
-
-using System.Text;
 using Microsoft.JSInterop;
-using SpawnDev.BlazorJS;
-using SpawnDev.BlazorJS.JSObjects;
 
 namespace SpawnDev.BlazorJS.THREE
 {
@@ -11,7 +7,7 @@ namespace SpawnDev.BlazorJS.THREE
         #region Constructors
         /// <inheritdoc/>
         public TorusKnotGeometry(IJSInProcessObjectReference _ref) : base(_ref) { }
-        
+
         /// <summary>
         /// constructor(
         ///         radius?: number,
@@ -23,19 +19,19 @@ namespace SpawnDev.BlazorJS.THREE
         ///     );
         /// </summary>
         public TorusKnotGeometry(float radius, float tube, float tubularSegments, float radialSegments, float p, float q) : base(JS.New("THREE.TorusKnotGeometry", radius, tube, tubularSegments, radialSegments, p, q)) { }
-        
+
         #endregion
 
         #region Properties
         /// <summary>
         /// readonly parameters: {
-                ///         readonly radius: number;
-                ///         readonly tube: number;
-                ///         readonly tubularSegments: number;
-                ///         readonly radialSegments: number;
-                ///         readonly p: number;
-                ///         readonly q: number;
-                ///     };
+        ///         readonly radius: number;
+        ///         readonly tube: number;
+        ///         readonly tubularSegments: number;
+        ///         readonly radialSegments: number;
+        ///         readonly p: number;
+        ///         readonly q: number;
+        ///     };
         /// </summary>
         public object Parameters { get => JSRef!.Get<object>("parameters"); }
         /// <summary>

@@ -1,9 +1,3 @@
-
-using System.Text;
-using Microsoft.JSInterop;
-using SpawnDev.BlazorJS;
-using SpawnDev.BlazorJS.JSObjects;
-
 namespace SpawnDev.BlazorJS.THREE
 {
     public interface OrthographicCameraJSONObject : Object3DJSONObject
@@ -35,14 +29,14 @@ namespace SpawnDev.BlazorJS.THREE
         float? Top { get; set; }
         /// <summary>
         /// view?: {
-                ///         enabled: boolean;
-                ///         fullWidth: number;
-                ///         fullHeight: number;
-                ///         offsetX: number;
-                ///         offsetY: number;
-                ///         width: number;
-                ///         height: number;
-                ///     };
+        ///         enabled: boolean;
+        ///         fullWidth: number;
+        ///         fullHeight: number;
+        ///         offsetX: number;
+        ///         offsetY: number;
+        ///         width: number;
+        ///         height: number;
+        ///     };
         /// </summary>
         object? View { get; set; }
         /// <summary>

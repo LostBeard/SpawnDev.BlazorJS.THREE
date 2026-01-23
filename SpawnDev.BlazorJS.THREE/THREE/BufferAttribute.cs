@@ -1,7 +1,4 @@
-
-using System.Text;
 using Microsoft.JSInterop;
-using SpawnDev.BlazorJS;
 using SpawnDev.BlazorJS.JSObjects;
 
 namespace SpawnDev.BlazorJS.THREE
@@ -14,12 +11,12 @@ namespace SpawnDev.BlazorJS.THREE
         #region Constructors
         /// <inheritdoc/>
         public BufferAttribute(IJSInProcessObjectReference _ref) : base(_ref) { }
-        
+
         /// <summary>
         /// constructor(array: TypedArray, itemSize: number, normalized?: boolean);
         /// </summary>
         public BufferAttribute(TypedArray array, float itemSize, bool? normalized = null) : base(normalized == null ? JS.New("THREE.BufferAttribute", array, itemSize) : JS.New("THREE.BufferAttribute", array, itemSize, normalized)) { }
-        
+
         #endregion
 
         #region Properties

@@ -1,7 +1,4 @@
-
-using System.Text;
 using Microsoft.JSInterop;
-using SpawnDev.BlazorJS;
 using SpawnDev.BlazorJS.JSObjects;
 
 namespace SpawnDev.BlazorJS.THREE
@@ -11,12 +8,12 @@ namespace SpawnDev.BlazorJS.THREE
         #region Constructors
         /// <inheritdoc/>
         public Frustum(IJSInProcessObjectReference _ref) : base(_ref) { }
-        
+
         /// <summary>
         /// constructor(p0?: Plane, p1?: Plane, p2?: Plane, p3?: Plane, p4?: Plane, p5?: Plane);
         /// </summary>
         public Frustum(Plane p0, Plane p1, Plane p2, Plane p3, Plane p4, Plane p5) : base(JS.New("THREE.Frustum", p0, p1, p2, p3, p4, p5)) { }
-        
+
         #endregion
 
         #region Properties

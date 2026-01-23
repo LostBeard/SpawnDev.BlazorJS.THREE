@@ -1,8 +1,4 @@
-
-using System.Text;
 using Microsoft.JSInterop;
-using SpawnDev.BlazorJS;
-using SpawnDev.BlazorJS.JSObjects;
 
 namespace SpawnDev.BlazorJS.THREE
 {
@@ -11,12 +7,12 @@ namespace SpawnDev.BlazorJS.THREE
         #region Constructors
         /// <inheritdoc/>
         public CubicInterpolant(IJSInProcessObjectReference _ref) : base(_ref) { }
-        
+
         /// <summary>
         /// constructor(parameterPositions: any, samplesValues: any, sampleSize: number, resultBuffer?: any);
         /// </summary>
         public CubicInterpolant(object parameterPositions, object samplesValues, float sampleSize, object resultBuffer) : base(JS.New("THREE.CubicInterpolant", parameterPositions, samplesValues, sampleSize, resultBuffer)) { }
-        
+
         #endregion
 
         #region Properties

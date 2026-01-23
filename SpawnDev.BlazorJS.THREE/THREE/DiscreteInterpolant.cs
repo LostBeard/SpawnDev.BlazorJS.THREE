@@ -1,8 +1,4 @@
-
-using System.Text;
 using Microsoft.JSInterop;
-using SpawnDev.BlazorJS;
-using SpawnDev.BlazorJS.JSObjects;
 
 namespace SpawnDev.BlazorJS.THREE
 {
@@ -11,12 +7,12 @@ namespace SpawnDev.BlazorJS.THREE
         #region Constructors
         /// <inheritdoc/>
         public DiscreteInterpolant(IJSInProcessObjectReference _ref) : base(_ref) { }
-        
+
         /// <summary>
         /// constructor(parameterPositions: any, samplesValues: any, sampleSize: number, resultBuffer?: any);
         /// </summary>
         public DiscreteInterpolant(object parameterPositions, object samplesValues, float sampleSize, object resultBuffer) : base(JS.New("THREE.DiscreteInterpolant", parameterPositions, samplesValues, sampleSize, resultBuffer)) { }
-        
+
         #endregion
 
         #region Properties

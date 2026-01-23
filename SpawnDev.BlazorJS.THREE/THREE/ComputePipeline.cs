@@ -1,8 +1,4 @@
-
-using System.Text;
 using Microsoft.JSInterop;
-using SpawnDev.BlazorJS;
-using SpawnDev.BlazorJS.JSObjects;
 
 namespace SpawnDev.BlazorJS.THREE
 {
@@ -11,12 +7,12 @@ namespace SpawnDev.BlazorJS.THREE
         #region Constructors
         /// <inheritdoc/>
         public ComputePipeline(IJSInProcessObjectReference _ref) : base(_ref) { }
-        
+
         /// <summary>
         /// constructor(cacheKey: string, computeProgram: ProgrammableStage);
         /// </summary>
         public ComputePipeline(string cacheKey, ProgrammableStage computeProgram) : base(JS.New("THREE.ComputePipeline", cacheKey, computeProgram)) { }
-        
+
         #endregion
 
         #region Properties

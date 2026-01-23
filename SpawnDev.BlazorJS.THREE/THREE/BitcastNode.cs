@@ -1,8 +1,4 @@
-
-using System.Text;
 using Microsoft.JSInterop;
-using SpawnDev.BlazorJS;
-using SpawnDev.BlazorJS.JSObjects;
 
 namespace SpawnDev.BlazorJS.THREE
 {
@@ -11,12 +7,12 @@ namespace SpawnDev.BlazorJS.THREE
         #region Constructors
         /// <inheritdoc/>
         public BitcastNode(IJSInProcessObjectReference _ref) : base(_ref) { }
-        
+
         /// <summary>
         /// constructor(valueNode: Node, conversionType: string, inputType: string | null);
         /// </summary>
         public BitcastNode(Node valueNode, string conversionType, string inputType) : base(JS.New("THREE.BitcastNode", valueNode, conversionType, inputType)) { }
-        
+
         #endregion
 
         #region Properties

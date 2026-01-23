@@ -1,8 +1,4 @@
-
-using System.Text;
 using Microsoft.JSInterop;
-using SpawnDev.BlazorJS;
-using SpawnDev.BlazorJS.JSObjects;
 
 namespace SpawnDev.BlazorJS.THREE
 {
@@ -11,7 +7,7 @@ namespace SpawnDev.BlazorJS.THREE
         #region Constructors
         /// <inheritdoc/>
         public PolarGridHelper(IJSInProcessObjectReference _ref) : base(_ref) { }
-        
+
         /// <summary>
         /// constructor(
         ///         radius?: number,
@@ -23,7 +19,7 @@ namespace SpawnDev.BlazorJS.THREE
         ///     );
         /// </summary>
         public PolarGridHelper(float radius, float radials, float circles, float divisions, ColorRepresentation color1, ColorRepresentation color2) : base(JS.New("THREE.PolarGridHelper", radius, radials, circles, divisions, color1, color2)) { }
-        
+
         #endregion
 
         #region Properties

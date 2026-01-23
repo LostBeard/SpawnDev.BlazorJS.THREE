@@ -1,8 +1,4 @@
-
-using System.Text;
 using Microsoft.JSInterop;
-using SpawnDev.BlazorJS;
-using SpawnDev.BlazorJS.JSObjects;
 
 namespace SpawnDev.BlazorJS.THREE
 {
@@ -11,24 +7,24 @@ namespace SpawnDev.BlazorJS.THREE
         #region Constructors
         /// <inheritdoc/>
         public MathNode(IJSInProcessObjectReference _ref) : base(_ref) { }
-        
+
         /// <summary>
         /// constructor(method: MathNodeMethod1, aNode: Node);
         /// </summary>
         public MathNode(MathNodeMethod1 method, Node aNode) : base(JS.New("THREE.MathNode", method, aNode)) { }
-        
-        
+
+
         /// <summary>
         /// constructor(method: MathNodeMethod2, aNode: Node, bNode: Node);
         /// </summary>
         public MathNode(MathNodeMethod2 method, Node aNode, Node bNode) : base(JS.New("THREE.MathNode", method, aNode, bNode)) { }
-        
-        
+
+
         /// <summary>
         /// constructor(method: MathNodeMethod3, aNode: Node, bNode: Node, cNode: Node);
         /// </summary>
         public MathNode(MathNodeMethod3 method, Node aNode, Node bNode, Node cNode) : base(JS.New("THREE.MathNode", method, aNode, bNode, cNode)) { }
-        
+
         #endregion
 
         #region Properties

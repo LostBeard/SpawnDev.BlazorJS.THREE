@@ -1,8 +1,4 @@
-
-using System.Text;
 using Microsoft.JSInterop;
-using SpawnDev.BlazorJS;
-using SpawnDev.BlazorJS.JSObjects;
 
 namespace SpawnDev.BlazorJS.THREE
 {
@@ -11,12 +7,12 @@ namespace SpawnDev.BlazorJS.THREE
         #region Constructors
         /// <inheritdoc/>
         public Cylindrical(IJSInProcessObjectReference _ref) : base(_ref) { }
-        
+
         /// <summary>
         /// constructor(radius?: number, theta?: number, y?: number);
         /// </summary>
         public Cylindrical(float radius, float theta, float y) : base(JS.New("THREE.Cylindrical", radius, theta, y)) { }
-        
+
         #endregion
 
         #region Properties

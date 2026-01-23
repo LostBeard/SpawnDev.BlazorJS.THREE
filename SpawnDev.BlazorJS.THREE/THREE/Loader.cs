@@ -1,12 +1,9 @@
-
-using System.Text;
 using Microsoft.JSInterop;
-using SpawnDev.BlazorJS;
 using SpawnDev.BlazorJS.JSObjects;
 
 namespace SpawnDev.BlazorJS.THREE
-{   
-    public class Loader<TData,TData2> : Loader<TData>
+{
+    public class Loader<TData, TData2> : Loader<TData>
     {
         /// <inheritdoc/>
         public Loader(IJSInProcessObjectReference _ref) : base(_ref) { }
@@ -41,12 +38,12 @@ namespace SpawnDev.BlazorJS.THREE
         #region Constructors
         /// <inheritdoc/>
         public Loader(IJSInProcessObjectReference _ref) : base(_ref) { }
-        
+
         /// <summary>
         /// constructor(manager?: LoadingManager);
         /// </summary>
         public Loader(LoadingManager manager) : base(JS.New("THREE.Loader", manager)) { }
-        
+
         #endregion
 
         #region Properties

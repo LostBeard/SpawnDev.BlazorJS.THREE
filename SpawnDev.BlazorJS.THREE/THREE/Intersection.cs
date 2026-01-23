@@ -1,10 +1,3 @@
-
-using Microsoft.JSInterop;
-using Microsoft.VisualBasic;
-using SpawnDev.BlazorJS;
-using SpawnDev.BlazorJS.JSObjects;
-using System.Text;
-
 namespace SpawnDev.BlazorJS.THREE
 {
     public class Intersection<TIntersected> : Intersection

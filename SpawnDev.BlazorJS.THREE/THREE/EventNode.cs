@@ -1,8 +1,4 @@
-
-using System.Text;
 using Microsoft.JSInterop;
-using SpawnDev.BlazorJS;
-using SpawnDev.BlazorJS.JSObjects;
 
 namespace SpawnDev.BlazorJS.THREE
 {
@@ -11,12 +7,12 @@ namespace SpawnDev.BlazorJS.THREE
         #region Constructors
         /// <inheritdoc/>
         public EventNode(IJSInProcessObjectReference _ref) : base(_ref) { }
-        
+
         /// <summary>
         /// constructor(eventType: EventNodeType, callback: (frame: NodeFrame) => void);
         /// </summary>
         public EventNode(EventNodeType eventType, Callback callback, NodeFrame frame) : base(JS.New("THREE.EventNode", eventType, callback, frame)) { }
-        
+
         #endregion
 
         #region Properties

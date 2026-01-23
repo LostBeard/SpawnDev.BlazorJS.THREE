@@ -1,7 +1,4 @@
-
-using System.Text;
 using Microsoft.JSInterop;
-using SpawnDev.BlazorJS;
 using SpawnDev.BlazorJS.JSObjects;
 
 namespace SpawnDev.BlazorJS.THREE
@@ -11,12 +8,12 @@ namespace SpawnDev.BlazorJS.THREE
         #region Constructors
         /// <inheritdoc/>
         public XRManager(IJSInProcessObjectReference _ref) : base(_ref) { }
-        
+
         /// <summary>
         /// constructor(renderer: Renderer, multiview?: boolean);
         /// </summary>
         public XRManager(Renderer renderer, bool multiview) : base(JS.New("THREE.XRManager", renderer, multiview)) { }
-        
+
         #endregion
 
         #region Properties

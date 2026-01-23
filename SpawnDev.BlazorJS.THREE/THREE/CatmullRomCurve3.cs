@@ -1,7 +1,4 @@
-
-using System.Text;
 using Microsoft.JSInterop;
-using SpawnDev.BlazorJS;
 using SpawnDev.BlazorJS.JSObjects;
 
 namespace SpawnDev.BlazorJS.THREE
@@ -11,12 +8,12 @@ namespace SpawnDev.BlazorJS.THREE
         #region Constructors
         /// <inheritdoc/>
         public CatmullRomCurve3(IJSInProcessObjectReference _ref) : base(_ref) { }
-        
+
         /// <summary>
         /// constructor(points?: Vector3[], closed?: boolean, curveType?: CurveType, tension?: number);
         /// </summary>
         public CatmullRomCurve3(Array<Vector3> points, bool closed, CurveType curveType, float tension) : base(JS.New("THREE.CatmullRomCurve3", points, closed, curveType, tension)) { }
-        
+
         #endregion
 
         #region Properties

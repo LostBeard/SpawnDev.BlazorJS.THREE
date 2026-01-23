@@ -1,7 +1,4 @@
-
-using System.Text;
 using Microsoft.JSInterop;
-using SpawnDev.BlazorJS;
 using SpawnDev.BlazorJS.JSObjects;
 
 namespace SpawnDev.BlazorJS.THREE
@@ -11,12 +8,12 @@ namespace SpawnDev.BlazorJS.THREE
         #region Constructors
         /// <inheritdoc/>
         public WebGLArrayRenderTarget(IJSInProcessObjectReference _ref) : base(_ref) { }
-        
+
         /// <summary>
         /// constructor(width?: number, height?: number, depth?: number, options?: RenderTargetOptions);
         /// </summary>
         public WebGLArrayRenderTarget(float width, float height, float depth, RenderTargetOptions options) : base(JS.New("THREE.WebGLArrayRenderTarget", width, height, depth, options)) { }
-        
+
         #endregion
 
         #region Properties

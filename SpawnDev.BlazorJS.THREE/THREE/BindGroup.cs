@@ -1,7 +1,4 @@
-
-using System.Text;
 using Microsoft.JSInterop;
-using SpawnDev.BlazorJS;
 using SpawnDev.BlazorJS.JSObjects;
 
 namespace SpawnDev.BlazorJS.THREE
@@ -11,7 +8,7 @@ namespace SpawnDev.BlazorJS.THREE
         #region Constructors
         /// <inheritdoc/>
         public BindGroup(IJSInProcessObjectReference _ref) : base(_ref) { }
-        
+
         /// <summary>
         /// constructor(
         ///         name?: string,
@@ -21,7 +18,7 @@ namespace SpawnDev.BlazorJS.THREE
         ///     );
         /// </summary>
         public BindGroup(string name, Array<NodeUniformsGroup> bindings, float index, Union<Array<NodeUniformsGroup>, BindGroup> bindingsReference) : base(JS.New("THREE.BindGroup", name, bindings, index, bindingsReference)) { }
-        
+
         #endregion
 
         #region Properties

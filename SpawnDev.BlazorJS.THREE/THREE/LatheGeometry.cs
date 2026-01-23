@@ -1,7 +1,4 @@
-
-using System.Text;
 using Microsoft.JSInterop;
-using SpawnDev.BlazorJS;
 using SpawnDev.BlazorJS.JSObjects;
 
 namespace SpawnDev.BlazorJS.THREE
@@ -11,22 +8,22 @@ namespace SpawnDev.BlazorJS.THREE
         #region Constructors
         /// <inheritdoc/>
         public LatheGeometry(IJSInProcessObjectReference _ref) : base(_ref) { }
-        
+
         /// <summary>
         /// constructor(points?: Vector2[], segments?: number, phiStart?: number, phiLength?: number);
         /// </summary>
         public LatheGeometry(Array<Vector2> points, float segments, float phiStart, float phiLength) : base(JS.New("THREE.LatheGeometry", points, segments, phiStart, phiLength)) { }
-        
+
         #endregion
 
         #region Properties
         /// <summary>
         /// readonly parameters: {
-                ///         readonly points: Vector2[];
-                ///         readonly segments: number;
-                ///         readonly phiStart: number;
-                ///         readonly phiLength: number;
-                ///     };
+        ///         readonly points: Vector2[];
+        ///         readonly segments: number;
+        ///         readonly phiStart: number;
+        ///         readonly phiLength: number;
+        ///     };
         /// </summary>
         public object Parameters { get => JSRef!.Get<object>("parameters"); }
         /// <summary>

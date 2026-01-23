@@ -1,8 +1,4 @@
-
-using System.Text;
 using Microsoft.JSInterop;
-using SpawnDev.BlazorJS;
-using SpawnDev.BlazorJS.JSObjects;
 
 namespace SpawnDev.BlazorJS.THREE
 {
@@ -11,24 +7,24 @@ namespace SpawnDev.BlazorJS.THREE
         #region Constructors
         /// <inheritdoc/>
         public SubgroupFunctionNode(IJSInProcessObjectReference _ref) : base(_ref) { }
-        
+
         /// <summary>
         /// constructor(method: SubgroupFunctionNodeMethod0);
         /// </summary>
         public SubgroupFunctionNode(SubgroupFunctionNodeMethod0 method) : base(JS.New("THREE.SubgroupFunctionNode", method)) { }
-        
-        
+
+
         /// <summary>
         /// constructor(method: SubgroupFunctionNodeMethod1, aNode: Node);
         /// </summary>
         public SubgroupFunctionNode(SubgroupFunctionNodeMethod1 method, Node aNode) : base(JS.New("THREE.SubgroupFunctionNode", method, aNode)) { }
-        
-        
+
+
         /// <summary>
         /// constructor(method: SubgroupFunctionNodeMethod2, aNode: Node, bNode: Node);
         /// </summary>
         public SubgroupFunctionNode(SubgroupFunctionNodeMethod2 method, Node aNode, Node bNode) : base(JS.New("THREE.SubgroupFunctionNode", method, aNode, bNode)) { }
-        
+
         #endregion
 
         #region Properties

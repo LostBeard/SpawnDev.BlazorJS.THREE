@@ -1,8 +1,4 @@
-
-using System.Text;
 using Microsoft.JSInterop;
-using SpawnDev.BlazorJS;
-using SpawnDev.BlazorJS.JSObjects;
 
 namespace SpawnDev.BlazorJS.THREE
 {
@@ -11,12 +7,12 @@ namespace SpawnDev.BlazorJS.THREE
         #region Constructors
         /// <inheritdoc/>
         public ViewportTextureNode(IJSInProcessObjectReference _ref) : base(_ref) { }
-        
+
         /// <summary>
         /// constructor(uvNode?: Node, levelNode?: Node | null, framebufferTexture?: FramebufferTexture | null);
         /// </summary>
         public ViewportTextureNode(Node uvNode, Node levelNode, FramebufferTexture framebufferTexture) : base(JS.New("THREE.ViewportTextureNode", uvNode, levelNode, framebufferTexture)) { }
-        
+
         #endregion
 
         #region Properties

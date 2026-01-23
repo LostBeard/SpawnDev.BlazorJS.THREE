@@ -1,9 +1,3 @@
-
-using System.Text;
-using Microsoft.JSInterop;
-using SpawnDev.BlazorJS;
-using SpawnDev.BlazorJS.JSObjects;
-
 namespace SpawnDev.BlazorJS.THREE
 {
     public interface CubeCameraRenderer
@@ -15,8 +9,8 @@ namespace SpawnDev.BlazorJS.THREE
         CoordinateSystem? CoordinateSystem { get; set; }
         /// <summary>
         /// xr: {
-                ///         enabled: boolean;
-                ///     };
+        ///         enabled: boolean;
+        ///     };
         /// </summary>
         object? Xr { get; set; }
         #endregion

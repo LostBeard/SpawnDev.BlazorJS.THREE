@@ -1,7 +1,4 @@
-
-using System.Text;
 using Microsoft.JSInterop;
-using SpawnDev.BlazorJS;
 using SpawnDev.BlazorJS.JSObjects;
 
 namespace SpawnDev.BlazorJS.THREE
@@ -16,12 +13,12 @@ namespace SpawnDev.BlazorJS.THREE
         #region Constructors
         /// <inheritdoc/>
         public RenderTarget(IJSInProcessObjectReference _ref) : base(_ref) { }
-        
+
         /// <summary>
         /// constructor(width?: number, height?: number, options?: RenderTargetOptions);
         /// </summary>
         public RenderTarget(float width, float height, RenderTargetOptions options) : base(JS.New("THREE.RenderTarget", width, height, options)) { }
-        
+
         #endregion
 
         #region Properties

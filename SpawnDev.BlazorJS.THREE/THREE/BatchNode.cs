@@ -1,8 +1,4 @@
-
-using System.Text;
 using Microsoft.JSInterop;
-using SpawnDev.BlazorJS;
-using SpawnDev.BlazorJS.JSObjects;
 
 namespace SpawnDev.BlazorJS.THREE
 {
@@ -11,12 +7,12 @@ namespace SpawnDev.BlazorJS.THREE
         #region Constructors
         /// <inheritdoc/>
         public BatchNode(IJSInProcessObjectReference _ref) : base(_ref) { }
-        
+
         /// <summary>
         /// constructor(batchMesh: BatchedMesh);
         /// </summary>
         public BatchNode(BatchedMesh batchMesh) : base(JS.New("THREE.BatchNode", batchMesh)) { }
-        
+
         #endregion
 
         #region Properties

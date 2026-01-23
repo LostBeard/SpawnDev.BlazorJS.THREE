@@ -1,7 +1,4 @@
-
-using System.Text;
 using Microsoft.JSInterop;
-using SpawnDev.BlazorJS;
 using SpawnDev.BlazorJS.JSObjects;
 
 namespace SpawnDev.BlazorJS.THREE
@@ -11,12 +8,12 @@ namespace SpawnDev.BlazorJS.THREE
         #region Constructors
         /// <inheritdoc/>
         public BufferGeometry(IJSInProcessObjectReference _ref) : base(_ref) { }
-        
+
         /// <summary>
         /// constructor();
         /// </summary>
         public BufferGeometry() : base(JS.New("THREE.BufferGeometry")) { }
-        
+
         #endregion
 
         #region Properties
@@ -58,10 +55,10 @@ namespace SpawnDev.BlazorJS.THREE
         public bool IsBufferGeometry { get => JSRef!.Get<bool>("isBufferGeometry"); }
         /// <summary>
         /// morphAttributes: {
-                ///         position?: Array<BufferAttribute | InterleavedBufferAttribute> | undefined;
-                ///         normal?: Array<BufferAttribute | InterleavedBufferAttribute> | undefined;
-                ///         color?: Array<BufferAttribute | InterleavedBufferAttribute> | undefined;
-                ///     };
+        ///         position?: Array<BufferAttribute | InterleavedBufferAttribute> | undefined;
+        ///         normal?: Array<BufferAttribute | InterleavedBufferAttribute> | undefined;
+        ///         color?: Array<BufferAttribute | InterleavedBufferAttribute> | undefined;
+        ///     };
         /// </summary>
         public object MorphAttributes { get => JSRef!.Get<object>("morphAttributes"); set => JSRef!.Set("morphAttributes", value); }
         /// <summary>

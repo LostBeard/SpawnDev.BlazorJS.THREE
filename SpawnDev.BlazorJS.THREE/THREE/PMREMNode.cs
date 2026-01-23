@@ -1,8 +1,4 @@
-
-using System.Text;
 using Microsoft.JSInterop;
-using SpawnDev.BlazorJS;
-using SpawnDev.BlazorJS.JSObjects;
 
 namespace SpawnDev.BlazorJS.THREE
 {
@@ -11,12 +7,12 @@ namespace SpawnDev.BlazorJS.THREE
         #region Constructors
         /// <inheritdoc/>
         public PMREMNode(IJSInProcessObjectReference _ref) : base(_ref) { }
-        
+
         /// <summary>
         /// constructor(value: Texture, uvNode?: Node | null, levelNode?: Node | null);
         /// </summary>
         public PMREMNode(Texture value, Node uvNode, Node levelNode) : base(JS.New("THREE.PMREMNode", value, uvNode, levelNode)) { }
-        
+
         #endregion
 
         #region Properties

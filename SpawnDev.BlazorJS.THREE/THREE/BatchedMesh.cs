@@ -1,7 +1,4 @@
-
-using System.Text;
 using Microsoft.JSInterop;
-using SpawnDev.BlazorJS;
 using SpawnDev.BlazorJS.JSObjects;
 
 namespace SpawnDev.BlazorJS.THREE
@@ -11,12 +8,12 @@ namespace SpawnDev.BlazorJS.THREE
         #region Constructors
         /// <inheritdoc/>
         public BatchedMesh(IJSInProcessObjectReference _ref) : base(_ref) { }
-        
+
         /// <summary>
         /// constructor(maxInstanceCount: number, maxVertexCount: number, maxIndexCount?: number, material?: Material);
         /// </summary>
         public BatchedMesh(float maxInstanceCount, float maxVertexCount, float maxIndexCount, Material material) : base(JS.New("THREE.BatchedMesh", maxInstanceCount, maxVertexCount, maxIndexCount, material)) { }
-        
+
         #endregion
 
         #region Properties

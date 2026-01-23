@@ -1,7 +1,3 @@
-
-using System.Text;
-using Microsoft.JSInterop;
-using SpawnDev.BlazorJS;
 using SpawnDev.BlazorJS.JSObjects;
 
 namespace SpawnDev.BlazorJS.THREE
@@ -31,19 +27,19 @@ namespace SpawnDev.BlazorJS.THREE
         Array<object>? DirectionalShadowMatrix { get; set; }
         /// <summary>
         /// hash: {
-                ///         directionalLength: number;
-                ///         pointLength: number;
-                ///         spotLength: number;
-                ///         rectAreaLength: number;
-                ///         hemiLength: number;
-                /// 
-                ///         numDirectionalShadows: number;
-                ///         numPointShadows: number;
-                ///         numSpotShadows: number;
-                ///         numSpotMaps: number;
-                /// 
-                ///         numLightProbes: number;
-                ///     };
+        ///         directionalLength: number;
+        ///         pointLength: number;
+        ///         spotLength: number;
+        ///         rectAreaLength: number;
+        ///         hemiLength: number;
+        /// 
+        ///         numDirectionalShadows: number;
+        ///         numPointShadows: number;
+        ///         numSpotShadows: number;
+        ///         numSpotMaps: number;
+        /// 
+        ///         numLightProbes: number;
+        ///     };
         /// </summary>
         object? Hash { get; set; }
         /// <summary>

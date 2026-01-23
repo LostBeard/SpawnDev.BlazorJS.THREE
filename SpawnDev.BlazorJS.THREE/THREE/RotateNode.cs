@@ -1,8 +1,4 @@
-
-using System.Text;
 using Microsoft.JSInterop;
-using SpawnDev.BlazorJS;
-using SpawnDev.BlazorJS.JSObjects;
 
 namespace SpawnDev.BlazorJS.THREE
 {
@@ -11,12 +7,12 @@ namespace SpawnDev.BlazorJS.THREE
         #region Constructors
         /// <inheritdoc/>
         public RotateNode(IJSInProcessObjectReference _ref) : base(_ref) { }
-        
+
         /// <summary>
         /// constructor(positionNode: Node, rotationNode: Node);
         /// </summary>
         public RotateNode(Node positionNode, Node rotationNode) : base(JS.New("THREE.RotateNode", positionNode, rotationNode)) { }
-        
+
         #endregion
 
         #region Properties
