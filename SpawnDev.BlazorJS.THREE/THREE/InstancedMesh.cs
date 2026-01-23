@@ -2,6 +2,10 @@ using Microsoft.JSInterop;
 
 namespace SpawnDev.BlazorJS.THREE
 {
+    /// <summary>
+    /// A special version of Mesh with support for instanced rendering. Use InstancedMesh if you have to render a large number of objects with the same geometry and material but with different world transformations.<br/>
+    /// https://threejs.org/docs/index.html#api/en/objects/InstancedMesh
+    /// </summary>
     public class InstancedMesh<TGeometry, TMaterial> : Mesh<TGeometry, TMaterial>
     {
         #region Constructors
@@ -9,9 +13,12 @@ namespace SpawnDev.BlazorJS.THREE
         public InstancedMesh(IJSInProcessObjectReference _ref) : base(_ref) { }
 
         /// <summary>
-        /// constructor(geometry: TGeometry | undefined, material: TMaterial | undefined, count: number);
+        /// Create a new InstancedMesh.
         /// </summary>
-        public InstancedMesh(TGeometry geometry, TMaterial material, float count) : base(JS.New("THREE.InstancedMesh", geometry, material, count)) { }
+        /// <param name="geometry">The Geometry</param>
+        /// <param name="material">The Material</param>
+        /// <param name="count">The number of instances</param>
+        public InstancedMesh(TGeometry geometry, TMaterial material, int count) : base(JS.New("THREE.InstancedMesh", geometry, material, count)) { }
 
         #endregion
 
@@ -25,9 +32,9 @@ namespace SpawnDev.BlazorJS.THREE
         /// </summary>
         public Sphere BoundingSphere { get => JSRef!.Get<Sphere>("boundingSphere"); set => JSRef!.Set("boundingSphere", value); }
         /// <summary>
-        /// count: number;
+        /// The number of instances.
         /// </summary>
-        public float Count { get => JSRef!.Get<float>("count"); set => JSRef!.Set("count", value); }
+        public int Count { get => JSRef!.Get<int>("count"); set => JSRef!.Set("count", value); }
         /// <summary>
         /// instanceColor: InstancedBufferAttribute | null;
         /// </summary>
@@ -62,44 +69,56 @@ namespace SpawnDev.BlazorJS.THREE
             return JSRef!.Call<InstancedMeshJSON>("toJSON", meta);
         }
         /// <summary>
-        /// setMorphAt(index: number, mesh: Mesh): void;
+        /// Sets the given Local-Space Morph Target Influences of a defined instance.
         /// </summary>
-        public void SetMorphAt(float index, Mesh mesh)
+        /// <param name="index">The index of the instance</param>
+        /// <param name="mesh">The mesh</param>
+        public void SetMorphAt(int index, Mesh mesh)
         {
             JSRef!.CallVoid("setMorphAt", index, mesh);
         }
         /// <summary>
-        /// setMatrixAt(index: number, matrix: Matrix4): void;
+        /// Sets the given Local-Space Matrix of a defined instance.
         /// </summary>
-        public void SetMatrixAt(float index, Matrix4 matrix)
+        /// <param name="index">The index of the instance</param>
+        /// <param name="matrix">The 4x4 instance matrix</param>
+        public void SetMatrixAt(int index, Matrix4 matrix)
         {
             JSRef!.CallVoid("setMatrixAt", index, matrix);
         }
         /// <summary>
-        /// setColorAt(index: number, color: Color): void;
+        /// Sets the given color of a defined instance.
         /// </summary>
-        public void SetColorAt(float index, Color color)
+        /// <param name="index">The index of the instance</param>
+        /// <param name="color">The color</param>
+        public void SetColorAt(int index, Color color)
         {
             JSRef!.CallVoid("setColorAt", index, color);
         }
         /// <summary>
-        /// getMorphAt(index: number, mesh: Mesh): void;
+        /// Gets the Local-Space Morph Target Influences of a defined instance.
         /// </summary>
-        public void GetMorphAt(float index, Mesh mesh)
+        /// <param name="index">The index of the instance</param>
+        /// <param name="mesh">The mesh</param>
+        public void GetMorphAt(int index, Mesh mesh)
         {
             JSRef!.CallVoid("getMorphAt", index, mesh);
         }
         /// <summary>
-        /// getMatrixAt(index: number, matrix: Matrix4): void;
+        /// Gets the Local-Space Matrix of a defined instance.
         /// </summary>
-        public void GetMatrixAt(float index, Matrix4 matrix)
+        /// <param name="index">The index of the instance</param>
+        /// <param name="matrix">The 4x4 instance matrix</param>
+        public void GetMatrixAt(int index, Matrix4 matrix)
         {
             JSRef!.CallVoid("getMatrixAt", index, matrix);
         }
         /// <summary>
-        /// getColorAt(index: number, color: Color): void;
+        /// Gets the color of a defined instance.
         /// </summary>
-        public void GetColorAt(float index, Color color)
+        /// <param name="index">The index of the instance</param>
+        /// <param name="color">The color</param>
+        public void GetColorAt(int index, Color color)
         {
             JSRef!.CallVoid("getColorAt", index, color);
         }

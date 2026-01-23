@@ -31,6 +31,14 @@ namespace SpawnDev.BlazorJS.THREE
         /// readonly version: number;
         /// </summary>
         public float Version { get => JSRef!.Get<float>("version"); }
+        /// <summary>
+        /// transparent: boolean;
+        /// </summary>
+        public bool Transparent { get => JSRef!.Get<bool>("transparent"); set => JSRef!.Set("transparent", value); }
+        /// <summary>
+        /// opacity: number;
+        /// </summary>
+        public float Opacity { get => JSRef!.Get<float>("opacity"); set => JSRef!.Set("opacity", value); }
         #endregion
 
         #region Methods

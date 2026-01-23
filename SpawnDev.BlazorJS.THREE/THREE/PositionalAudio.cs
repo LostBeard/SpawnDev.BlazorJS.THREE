@@ -2,6 +2,10 @@ using Microsoft.JSInterop;
 
 namespace SpawnDev.BlazorJS.THREE
 {
+    /// <summary>
+    /// Create a positional audio object.<br/>
+    /// https://threejs.org/docs/index.html#api/en/audio/PositionalAudio
+    /// </summary>
     public class PositionalAudio : Audio
     {
         #region Constructors
@@ -9,8 +13,9 @@ namespace SpawnDev.BlazorJS.THREE
         public PositionalAudio(IJSInProcessObjectReference _ref) : base(_ref) { }
 
         /// <summary>
-        /// constructor(listener: AudioListener);
+        /// Create a new PositionalAudio.
         /// </summary>
+        /// <param name="listener">The AudioListener</param>
         public PositionalAudio(AudioListener listener) : base(JS.New("THREE.PositionalAudio", listener)) { }
 
         #endregion

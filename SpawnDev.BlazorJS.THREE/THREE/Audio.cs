@@ -3,6 +3,10 @@ using SpawnDev.BlazorJS.JSObjects;
 
 namespace SpawnDev.BlazorJS.THREE
 {
+    /// <summary>
+    /// Create a non-positional ( global ) audio object.<br/>
+    /// https://threejs.org/docs/index.html#api/en/audio/Audio
+    /// </summary>
     public class Audio : Object3D
     {
         #region Constructors
@@ -10,8 +14,9 @@ namespace SpawnDev.BlazorJS.THREE
         public Audio(IJSInProcessObjectReference _ref) : base(_ref) { }
 
         /// <summary>
-        /// constructor(listener: AudioListener);
+        /// Create a new Audio.
         /// </summary>
+        /// <param name="listener">The AudioListener</param>
         public Audio(AudioListener listener) : base(JS.New("THREE.Audio", listener)) { }
 
         #endregion
@@ -95,7 +100,7 @@ namespace SpawnDev.BlazorJS.THREE
         /// <summary>
         /// stop(delay?: number): this;
         /// </summary>
-        public Audio Stop(float delay)
+        public Audio Stop(float delay = 0)
         {
             return JSRef!.Call<Audio>("stop", delay);
         }
@@ -186,7 +191,7 @@ namespace SpawnDev.BlazorJS.THREE
         /// <summary>
         /// play(delay?: number): this;
         /// </summary>
-        public Audio Play(float delay)
+        public Audio Play(float delay = 0)
         {
             return JSRef!.Call<Audio>("play", delay);
         }

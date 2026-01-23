@@ -1,0 +1,102 @@
+@page "/InstancedMeshDemo"
+@using SpawnDev.BlazorJS.THREE
+@using SpawnDev.BlazorJS.JSObjects
+@implements IDisposable
+
+<h3>Instanced Mesh Demo</h3>
+<p>Rendering 10,000 instances with high performance.</p>
+
+<div style="width: 100%; height: 600px; position: relative;">
+    <canvas @ref="canvasRef" tabindex="0" style="width: 100%; height: 100%; display: block; outline: none;"></canvas>
+    <div style="position: absolute; top: 10px; left: 10px; color: white; background: rgba(0,0,0,0.5); padding: 5px;">
+        Instances: @count
+    </div>
+</div>
+
+@code {
+    [Inject] BlazorJSRuntime JS { get; set; } = default!;
+    [Inject] THREEService THREE { get; set; } = default!;
+
+    ElementReference canvasRef;
+    HTMLCanvasElement? canvas;
+    Scene? scene;
+    PerspectiveCamera? camera;
+    WebGLRenderer? renderer;
+    OrbitControls? controls;
+    InstancedMesh<IcosahedronGeometry, MeshNormalMaterial>? mesh;
+    ActionCallback<float>? animateCallback;
+    
+    int count = 10000;
+    Matrix4? dummyMatrix;
+
+    /*
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            await THREE.Ready;
+            
+            canvas = new HTMLCanvasElement(canvasRef);
+            var width = canvas.ClientWidth;
+            var height = canvas.ClientHeight;
+
+            scene = new SpawnDev.BlazorJS.THREE.Scene();
+            camera = new SpawnDev.BlazorJS.THREE.PerspectiveCamera(60, (float)width / height, 0.1f, 100f);
+            camera.Position.Set(0, 0, 40);
+
+            renderer = new SpawnDev.BlazorJS.THREE.WebGLRenderer(new WebGLRendererParameters { Canvas = canvas, Antialias = true });
+            renderer.SetPixelRatio(1);
+            renderer.SetSize(width, height);
+
+            controls = new SpawnDev.BlazorJS.THREE.OrbitControls(camera, renderer.DomElement);
+            controls.AutoRotate = true;
+
+            // Create Instanced Mesh
+            var geometry = new SpawnDev.BlazorJS.THREE.IcosahedronGeometry(0.5f);
+            var material = new SpawnDev.BlazorJS.THREE.MeshNormalMaterial();
+            mesh = new SpawnDev.BlazorJS.THREE.InstancedMesh<IcosahedronGeometry, MeshNormalMaterial>(geometry, material, count);
+            
+            dummyMatrix = new SpawnDev.BlazorJS.THREE.Matrix4();
+            var color = new SpawnDev.BlazorJS.THREE.Color();
+            var rand = new Random();
+
+            for (int i = 0; i < count; i++)
+            {
+                float x = (float)(rand.NextDouble() * 40 - 20);
+                float y = (float)(rand.NextDouble() * 40 - 20);
+                float z = (float)(rand.NextDouble() * 40 - 20);
+                
+                dummyMatrix.MakeTranslation(x, y, z);
+                mesh.SetMatrixAt((int)i, dummyMatrix); // Uses int index now
+                
+                // Set simplified colors
+                mesh.SetColorAt((int)i, new THREE.Color((float)rand.NextDouble() * 0xffffff));
+            }
+
+            scene.Add(mesh);
+
+            animateCallback = new ActionCallback<float>(Animate);
+            renderer.SetAnimationLoop(animateCallback);
+        }
+    }
+
+    void Animate(float time)
+    {
+        controls?.Update();
+        renderer?.Render(scene!, camera!);
+    }
+
+    public void Dispose()
+    {
+        renderer?.SetAnimationLoop(null);
+        animateCallback?.Dispose();
+        controls?.DisposeJS();
+        scene?.Dispose();
+        camera?.Dispose();
+        renderer?.Dispose();
+        mesh?.Dispose();
+        dummyMatrix?.Dispose();
+    }
+    */
+    public void Dispose() {}
+}

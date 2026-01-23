@@ -1,0 +1,183 @@
+@page "/AudioDemo"
+@using SpawnDev.BlazorJS.THREE
+@using SpawnDev.BlazorJS.JSObjects
+@implements IDisposable
+
+<h3>Audio Demo</h3>
+<p>Position the camera to hear the 3D audio effect. Click "Play" to start.</p>
+
+<div style="margin-bottom: 10px;">
+    <button @onclick="PlayAudio" disabled="@isPlaying">Play</button>
+    <button @onclick="StopAudio" disabled="@(!isPlaying)">Stop</button>
+</div>
+
+<div style="width: 100%; height: 600px; position: relative;">
+    <canvas @ref="canvasRef" tabindex="0" style="width: 100%; height: 100%; display: block; outline: none;"></canvas>
+    @if (isLoading)
+    {
+        <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: white; background: rgba(0,0,0,0.7); padding: 20px; border-radius: 10px;">
+            Loading audio...
+        </div>
+    }
+</div>
+
+@code {
+    [Inject] BlazorJSRuntime JS { get; set; } = default!;
+    [Inject] THREEService THREE { get; set; } = default!;
+
+    ElementReference canvasRef;
+    HTMLCanvasElement? canvas;
+    Scene? scene;
+    PerspectiveCamera? camera;
+    WebGLRenderer? renderer;
+    OrbitControls? controls;
+    ActionCallback<float>? animateCallback;
+    
+    PositionalAudio? sound;
+    SpawnDev.BlazorJS.THREE.AudioListener? listener;
+    Mesh? mesh;
+    
+    bool isPlaying = false;
+    bool isLoading = true;
+    
+    // Using a sample file from Three.js examples
+    string songUrl = "https://raw.githubusercontent.com/mrdoob/three.js/master/examples/sounds/376737_Skullbeatz___Bad_Cat_Maste.mp3";
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            await THREE.Ready;
+            
+            canvas = new HTMLCanvasElement(canvasRef);
+            var width = canvas.ClientWidth;
+            var height = canvas.ClientHeight;
+
+            scene = new SpawnDev.BlazorJS.THREE.Scene();
+            scene.Background = new SpawnDev.BlazorJS.THREE.Color(0xa0a0a0);
+            scene.Fog = new SpawnDev.BlazorJS.THREE.Fog(0xa0a0a0, 10, 50);
+
+            camera = new SpawnDev.BlazorJS.THREE.PerspectiveCamera(45, (float)width / height, 0.1f, 100f);
+            camera.Position.Set(0, 5, 10);
+
+            // Audio Listener attached to camera
+            listener = new SpawnDev.BlazorJS.THREE.AudioListener();
+            camera.Add(listener);
+
+            renderer = new SpawnDev.BlazorJS.THREE.WebGLRenderer(new WebGLRendererParameters { Canvas = canvas, Antialias = true });
+            renderer.SetPixelRatio(1); // Default to 1 to avoid complexity with Window object for now
+            renderer.SetSize(width, height);
+            renderer.ShadowMap.Enabled = true;
+
+            controls = new SpawnDev.BlazorJS.THREE.OrbitControls(camera, renderer.DomElement);
+            controls.Target.Set(0, 0, 0);
+            controls.Update();
+
+            // Lighting
+            var hemiLight = new SpawnDev.BlazorJS.THREE.HemisphereLight(0xffffff, 0x444444, 1.0f);
+            hemiLight.Position.Set(0, 20, 0);
+            scene.Add(hemiLight);
+
+            var dirLight = new SpawnDev.BlazorJS.THREE.DirectionalLight(0xffffff, 1.0f);
+            dirLight.Position.Set(3, 10, 10);
+            dirLight.CastShadow = true;
+            scene.Add(dirLight);
+
+            // Ground
+            var mesh = new SpawnDev.BlazorJS.THREE.Mesh( new SpawnDev.BlazorJS.THREE.PlaneGeometry( 40, 40, 1, 1 ), new SpawnDev.BlazorJS.THREE.MeshPhongMaterial( new MeshPhongMaterialParameters { Color = 0x999999, DepthWrite = false } ) );
+            mesh.Rotation.X = -(float)Math.PI / 2;
+            mesh.ReceiveShadow = true;
+            scene.Add( mesh );
+            
+            var grid = new SpawnDev.BlazorJS.THREE.GridHelper( 40, 20, 0x000000, 0x000000 );
+            ((Material)grid.Material).Transparent = true;
+            ((Material)grid.Material).Opacity = 0.2f;
+            scene.Add( grid );
+
+            // Sound Source Mesh
+            var boxGeo = new SpawnDev.BlazorJS.THREE.BoxGeometry(1, 1, 1);
+            var boxMat = new SpawnDev.BlazorJS.THREE.MeshPhongMaterial(new MeshPhongMaterialParameters { Color = 0xff2200, FlatShading = true });
+            this.mesh = new SpawnDev.BlazorJS.THREE.Mesh(boxGeo, boxMat);
+            this.mesh.CastShadow = true;
+            this.mesh.Position.Set(0, 0.5f, 0);
+            scene.Add(this.mesh);
+
+            // Positional Audio
+            sound = new SpawnDev.BlazorJS.THREE.PositionalAudio(listener);
+            var audioLoader = new SpawnDev.BlazorJS.THREE.AudioLoader();
+            
+            // Allow user interaction to start context if needed (handled by button mostly)
+            
+            try {
+                // We use a task completion source to await the callback
+                var tcs = new TaskCompletionSource();
+                
+                audioLoader.Load(songUrl, new ActionCallback<AudioBuffer>((buffer) => {
+                    sound.SetBuffer(buffer);
+                    sound.SetRefDistance(1); // Sound starts fading after 1 unit
+                    sound.SetLoop(true);
+                    this.mesh.Add(sound);
+                    isLoading = false;
+                    StateHasChanged();
+                    tcs.SetResult();
+                }), null, null);
+                
+                // Don't await tcs here to allow rendering to start, but logically we wait for sound
+            } catch (Exception ex) {
+                Console.WriteLine($"Error loading sound: {ex.Message}");
+                isLoading = false;
+            }
+
+            animateCallback = new ActionCallback<float>(Animate);
+            renderer.SetAnimationLoop(animateCallback);
+            
+            StateHasChanged();
+        }
+    }
+    
+    void PlayAudio()
+    {
+        if (sound != null && !isPlaying)
+        {
+            sound.Play(); // Try calling Play with no args
+            isPlaying = true;
+            StateHasChanged();
+        }
+    }
+    
+    void StopAudio()
+    {
+        if (sound != null && isPlaying)
+        {
+            sound.Stop();
+            isPlaying = false;
+            StateHasChanged();
+        }
+    }
+
+    void Animate(float time)
+    {
+        if (mesh != null)
+        {
+            // Move the mesh around
+            float r = 2.5f;
+            mesh.Position.X = r * (float)Math.Cos(time / 1000f);
+            mesh.Position.Z = r * (float)Math.Sin(time / 1000f);
+        }
+    
+        renderer!.Render(scene!, camera!);
+    }
+
+    public void Dispose()
+    {
+        renderer?.SetAnimationLoop(null);
+        animateCallback?.Dispose();
+        
+        if (sound != null && isPlaying) sound.Stop();
+        
+        controls?.DisposeJS(); // Assumed extension for dispose
+        scene?.Dispose();
+        camera?.Dispose();
+        renderer?.Dispose();
+    }
+}

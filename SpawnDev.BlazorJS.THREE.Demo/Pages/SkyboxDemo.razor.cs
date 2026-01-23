@@ -71,6 +71,8 @@ namespace SpawnDev.BlazorJS.THREE.Demo.Pages
                 controls.RollSpeed = (float)Math.PI / 24;
                 controls.AutoForward = false;
                 controls.DragToLook = true;
+                
+                canvas.Focus();
 
                 animateCallback = new ActionCallback<float>(Animate);
                 renderer.SetAnimationLoop(animateCallback);

@@ -3,6 +3,10 @@ using SpawnDev.BlazorJS.JSObjects;
 
 namespace SpawnDev.BlazorJS.THREE
 {
+    /// <summary>
+    /// The AudioListener represents a virtual listener of the all positional and non-positional audio encounted in the scene.<br/>
+    /// https://threejs.org/docs/index.html#api/en/audio/AudioListener
+    /// </summary>
     public class AudioListener : Object3D
     {
         #region Constructors
@@ -10,7 +14,7 @@ namespace SpawnDev.BlazorJS.THREE
         public AudioListener(IJSInProcessObjectReference _ref) : base(_ref) { }
 
         /// <summary>
-        /// constructor();
+        /// Create a new AudioListener.
         /// </summary>
         public AudioListener() : base(JS.New("THREE.AudioListener")) { }
 
