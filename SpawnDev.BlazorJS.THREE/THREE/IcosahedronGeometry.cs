@@ -2,6 +2,9 @@ using Microsoft.JSInterop;
 
 namespace SpawnDev.BlazorJS.THREE
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public class IcosahedronGeometry : PolyhedronGeometry
     {
         #region Constructors
@@ -11,7 +14,7 @@ namespace SpawnDev.BlazorJS.THREE
         /// <summary>
         /// constructor(radius?: number, detail?: number);
         /// </summary>
-        public IcosahedronGeometry(float radius, float detail) : base(JS.New("THREE.IcosahedronGeometry", radius, detail)) { }
+        public IcosahedronGeometry(float radius, float detail = 0) : base(JS.New("THREE.IcosahedronGeometry", radius, detail)) { }
 
         #endregion
 

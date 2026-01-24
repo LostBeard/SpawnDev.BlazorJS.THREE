@@ -3,6 +3,9 @@ using SpawnDev.BlazorJS.JSObjects;
 
 namespace SpawnDev.BlazorJS.THREE
 {
+    /// <summary>
+    /// https://threejs.org/docs/?q=color#Color
+    /// </summary>
     public class Color : JSObject
     {
         #region Constructors
@@ -25,6 +28,10 @@ namespace SpawnDev.BlazorJS.THREE
         /// </summary>
         public Color(float r, float g, float b) : base(JS.New("THREE.Color", r, g, b)) { }
 
+        /// <summary>
+        /// constructor(color?: number);
+        /// </summary>
+        public Color(float color) : base(JS.New("THREE.Color", color)) { }
         #endregion
 
         #region Properties
