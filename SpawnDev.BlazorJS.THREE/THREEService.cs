@@ -33,7 +33,7 @@ namespace SpawnDev.BlazorJS.THREE
             
             // Load Stats (uses default export)
             using var statsModule = await JS.Import("Stats");
-            JS.Set("Stats", statsModule!.JSRef!.Get<Function>("default"));
+            JS.Set("Stats", statsModule!.JSRef!.GetExportClass("default"));
         }
     }
 }
