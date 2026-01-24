@@ -1,0 +1,121 @@
+@page "/StatsDemo"
+@using SpawnDev.BlazorJS.JSObjects
+@using SpawnDev.BlazorJS.THREE
+@implements IDisposable
+
+<h3>Stats.js Performance Monitor</h3>
+<p>You should see a performance monitor (FPS, MS, MB) in the top-left corner.</p>
+
+<canvas @ref="canvasRef" style="width: 100%; height: 600px; display: block;"></canvas>
+
+@code {
+    [Inject]
+    public THREEService THREE { get; set; }
+
+    ElementReference canvasRef;
+    HTMLCanvasElement? canvas;
+    WebGLRenderer? renderer;
+    Scene? scene;
+    PerspectiveCamera? camera;
+    Mesh? mesh;
+    Stats? stats;
+    ActionCallback<float>? animateCallback;
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            await THREE.Ready;
+
+            canvas = new HTMLCanvasElement(canvasRef);
+            var width = canvas.ClientWidth;
+            var height = canvas.ClientHeight;
+
+            // Scene setup
+            scene = new SpawnDev.BlazorJS.THREE.Scene();
+            camera = new SpawnDev.BlazorJS.THREE.PerspectiveCamera(70, (float)width / height, 0.1f, 100f);
+            camera.Position.Z = 400;
+
+            var geometry = new SpawnDev.BlazorJS.THREE.BoxGeometry(200, 200, 200);
+            var material = new SpawnDev.BlazorJS.THREE.MeshNormalMaterial();
+            mesh = new SpawnDev.BlazorJS.THREE.Mesh(geometry, material);
+            scene.Add(mesh);
+
+            try
+            {
+                renderer = new SpawnDev.BlazorJS.THREE.WebGLRenderer(new WebGLRendererParameters { Canvas = canvas, Antialias = true });
+                renderer.SetPixelRatio(1);
+                renderer.SetSize(width, height);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Renderer init error: {ex.Message} {ex.StackTrace}");
+            }
+
+            // Stats setup
+            try
+            {
+                stats = new SpawnDev.BlazorJS.THREE.Stats();
+                stats.ShowPanel(0);
+                document.Body!.AppendChild(stats.Dom);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Stats init error: {ex.Message}");
+            }
+
+            animateCallback = new ActionCallback<float>(Animate);
+            if (renderer != null)
+            {
+                renderer.SetAnimationLoop(animateCallback);
+            }
+        }
+    }
+
+    void Animate(float time)
+    {
+        stats?.Begin();
+
+        if (mesh != null)
+        {
+            mesh.Rotation.X += 0.005f;
+            mesh.Rotation.Y += 0.01f;
+        }
+
+        renderer?.Render(scene!, camera!);
+
+        stats?.End();
+    }
+
+    public void Dispose()
+    {
+        if (stats != null)
+        {
+            try 
+            {
+                document.Body!.RemoveChild(stats.Dom); 
+            }
+            catch {}
+            stats.Dispose(); // JSObject implements IDisposable
+        }
+        
+        renderer?.SetAnimationLoop(null);
+        animateCallback?.Dispose();
+        
+        mesh?.Geometry.Dispose();
+        ((Material)mesh?.Material!).DisposeJS();
+        
+        renderer?.Dispose();
+        scene?.Dispose();
+        camera?.Dispose();
+    }
+    
+    // Explicit document access helper if needed, but BlazorJS usually exposes 'document' globally or via IWindow
+    // Assuming 'document' is available or I need to request it.
+    // SpawnDev.BlazorJS normally exposes 'JSRuntime.Window.Document'
+    // Let's use the global 'document' property if using SpawnDev.BlazorJS static usage or similar.
+    // Actually, checking how document is accessed in other demos or standard BlazorJS.
+    // Usually: using SpawnDev.BlazorJS.JSObjects; -> window.Document or new Document()
+    
+    Document document => SpawnDev.BlazorJS.BlazorJSRuntime.JS.Get<Document>("document");
+}
