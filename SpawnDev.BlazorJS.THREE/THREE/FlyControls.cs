@@ -20,7 +20,7 @@ namespace SpawnDev.BlazorJS.THREE
         /// <param name="camera">The camera to be controlled</param>
         /// <param name="domElement">The HTML element used for event listeners</param>
         public FlyControls(Camera camera, HTMLElement domElement) 
-            : base(JS.New("FlyControls", camera, domElement)) { }
+            : base(JS.New("THREE.FlyControls", camera, domElement)) { }
         #endregion
 
         #region Properties

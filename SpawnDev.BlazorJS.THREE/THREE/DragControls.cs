@@ -20,7 +20,7 @@ namespace SpawnDev.BlazorJS.THREE
         /// <param name="camera">The camera of the rendered scene</param>
         /// <param name="domElement">The HTML element used for event listeners</param>
         public DragControls(Array<Object3D> objects, Camera camera, HTMLElement domElement) 
-            : base(JS.New("DragControls", objects, camera, domElement)) { }
+            : base(JS.New("THREE.DragControls", objects, camera, domElement)) { }
 
         /// <summary>
         /// Creates a new DragControls instance
@@ -29,7 +29,7 @@ namespace SpawnDev.BlazorJS.THREE
         /// <param name="camera">The camera of the rendered scene</param>
         /// <param name="domElement">The HTML element used for event listeners</param>
         public DragControls(JSObject[] objects, Camera camera, HTMLElement domElement) 
-            : base(JS.New("DragControls", objects, camera, domElement)) { }
+            : base(JS.New("THREE.DragControls", objects, camera, domElement)) { }
         #endregion
 
         #region Properties

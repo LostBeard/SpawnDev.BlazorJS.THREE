@@ -17,7 +17,7 @@ namespace SpawnDev.BlazorJS.THREE
         /// <summary>
         /// Creates a new Stats instance
         /// </summary>
-        public Stats() : base(JS.New("Stats")) { }
+        public Stats() : base(JS.New("THREE.Stats")) { }
         #endregion
 
         #region Properties

@@ -15,7 +15,7 @@ namespace SpawnDev.BlazorJS.THREE
         /// <summary>
         /// constructor(object: Object3D, domElement?: HTMLElement | null);
         /// </summary>
-        public OrbitControls(Object3D obj, HTMLElement domElement) : base(JS.New("OrbitControls", obj, domElement)) { }
+        public OrbitControls(Object3D obj, HTMLElement domElement) : base(JS.New("THREE.OrbitControls", obj, domElement)) { }
         #endregion
 
         #region Properties
