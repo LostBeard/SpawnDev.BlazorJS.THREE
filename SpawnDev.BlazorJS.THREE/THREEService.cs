@@ -16,7 +16,7 @@
             // Load three.js
             // import * as THREE from 'three';
             using var three = await JS.Import("three");
-            // globalThis.THREE = THREE;    
+            // globalThis.THREE.* = THREE.*;    
             three.ExportTo("THREE");
 
             // Load OrbitControls
